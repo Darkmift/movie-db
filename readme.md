@@ -61,3 +61,9 @@ https://api.themoviedb.org/3/genre/movie/list
      - **Fetch Data:** Retrieve data from TMDb using the API endpoints.
      - **Map Data:** Convert the API data into the corresponding table data structure.
      - **Seed the Database:** Populate your database with the fetched data.
+
+# Python-MySQL Project with The Movie Database API
+<img src="assets/movies.svg" alt="Movies" width="600"/>
+
+
+This project demonstrates how to integrate Python with a MySQL database to interact with [The Movie Database (TMDb) API](https://developer.themoviedb.org/docs/getting-started). Follow the steps below to set up the project, fetch data from the API, and seed your database.

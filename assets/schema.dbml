@@ -1,0 +1,72 @@
+// Movies table: stores basic movie information.
+Table movies {
+  id                 int        [pk] // TMDb movie ID
+  adult              boolean
+  backdrop_path      varchar(255)
+  original_language  varchar(10)
+  original_title     varchar(255)
+  overview           text
+  popularity         decimal(8,3)
+  poster_path        varchar(255)
+  release_date       date
+  title              varchar(255)
+  video              boolean
+  vote_average       decimal(3,1)
+  vote_count         int
+}
+
+// Genres table: stores available genres.
+Table genres {
+  id     int        [pk] // Genre ID
+  name   varchar(50)
+}
+
+// Join table: connects movies to genres (many-to-many)
+Table movie_genres {
+  movie_id  int  [pk, ref: > movies.id]
+  genre_id  int  [pk, ref: > genres.id]
+}
+
+// Images table: stores images for movies (backdrops, logos, posters)
+Table images {
+  id           int         [pk, increment]
+  movie_id     int         [ref: > movies.id]
+  type         varchar(20) // values: 'backdrop', 'logo', 'poster'
+  file_path    varchar(255)
+  aspect_ratio decimal(5,3)
+  height       int
+  width        int
+  vote_average decimal(3,1)
+  vote_count   int
+  iso_639_1    varchar(10)
+}
+
+// Cast table: stores cast details for a movie.
+Table movie_cast {
+  id            int         [pk, increment]
+  movie_id      int         [ref: > movies.id]
+  person_id     int         // TMDb person ID
+  cast_order    int         // order field from JSON
+  credit_id     varchar(50)
+  character     varchar(255)
+  name          varchar(255)
+  original_name varchar(255)
+  gender        int
+  popularity    decimal(8,3)
+  profile_path  varchar(255)
+}
+
+// Crew table: stores crew details for a movie.
+Table movie_crew {
+  id            int         [pk, increment]
+  movie_id      int         [ref: > movies.id]
+  person_id     int         // TMDb person ID
+  credit_id     varchar(50)
+  department    varchar(100)
+  job           varchar(100)
+  name          varchar(255)
+  original_name varchar(255)
+  gender        int
+  popularity    decimal(8,3)
+  profile_path  varchar(255)
+}
