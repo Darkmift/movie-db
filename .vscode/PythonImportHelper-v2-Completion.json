@@ -237,6 +237,14 @@
         "documentation": {}
     },
     {
+        "label": "create_tables",
+        "importPath": "services.db",
+        "description": "services.db",
+        "isExtraImport": true,
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
         "label": "get_db_connection",
         "importPath": "services.db",
         "description": "services.db",
@@ -532,6 +540,15 @@
         "documentation": {}
     },
     {
+        "label": "create_tables",
+        "kind": 2,
+        "importPath": "services.db",
+        "description": "services.db",
+        "peekOfCode": "def create_tables():\n    \"\"\"\n    Create the necessary tables in the movie_db database if they don't exist.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Cannot create tables because the connection failed.\")\n        return\n    try:\n        cursor = connection.cursor()",
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
         "label": "get_all_genres",
         "kind": 2,
         "importPath": "services.movie_api",
@@ -635,16 +652,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def movies_by_page(page):\n    try:\n        movies = movie_api.get_movie_credits(page)\n        # movies = movie_api.get_movies_by_page(page)\n        return jsonify(movies)\n    except Exception as e:\n        # Return a JSON error message in case of failure\n        return jsonify({\"error\": str(e)}), 500\n# Use a guard to ensure initialization runs only once.\n@app.before_request",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "before_request_func",
-        "kind": 2,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "def before_request_func():\n    if not hasattr(app, '_initialized'):\n        print(\"Initializing the database...\")\n        initialize_database()\n        app._initialized = True\nif __name__ == '__main__':\n    print(\"Starting Flask app...\", flush=True)\n    app.run(debug=True)",
+        "peekOfCode": "def movies_by_page(page):\n    try:\n        movies = movie_api.get_movie_credits(page)\n        # movies = movie_api.get_movies_by_page(page)\n        return jsonify(movies)\n    except Exception as e:\n        # Return a JSON error message in case of failure\n        return jsonify({\"error\": str(e)}), 500\n# Use a guard to ensure initialization runs only once.\nif not hasattr(app, '_initialized'):",
         "detail": "app",
         "documentation": {}
     },

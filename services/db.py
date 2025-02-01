@@ -23,7 +23,7 @@ def get_db_connection():
             print("Connected to MySQL database")
         return connection
     except Error as e:
-        print("Error while connecting to MySQL", e)
+        print("Error while connecting to MySQL:", e)
         return None
 
 def initialize_database():
@@ -44,8 +44,140 @@ def initialize_database():
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {db_name}")
         print(f"Database '{db_name}' is ready (created or already exists).")
     except Error as e:
-        print("Error while initializing the database", e)
+        print("Error while initializing the database:", e)
     finally:
         if connection.is_connected():
             cursor.close()
             connection.close()
+
+def create_tables():
+    """
+    Create the necessary tables in the movie_db database if they don't exist.
+    """
+    connection = get_db_connection()
+    if connection is None:
+        print("Cannot create tables because the connection failed.")
+        return
+
+    try:
+        cursor = connection.cursor()
+        
+        # Create movies table
+        print("Creating 'movies' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS movies (
+                id INT PRIMARY KEY,
+                adult BOOLEAN,
+                backdrop_path VARCHAR(255),
+                original_language VARCHAR(10),
+                original_title VARCHAR(255),
+                overview TEXT,
+                popularity DECIMAL(8,3),
+                poster_path VARCHAR(255),
+                release_date DATE,
+                title VARCHAR(255),
+                video BOOLEAN,
+                vote_average DECIMAL(3,1),
+                vote_count INT
+            );
+        """)
+        print("'movies' table created or already exists.")
+        
+        # Create genres table
+        print("Creating 'genres' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS genres (
+                id INT PRIMARY KEY,
+                name VARCHAR(50)
+            );
+        """)
+        print("'genres' table created or already exists.")
+        
+        # Create join table for movies and genres
+        print("Creating 'movie_genres' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS movie_genres (
+                movie_id INT,
+                genre_id INT,
+                PRIMARY KEY (movie_id, genre_id),
+                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
+                FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE
+            );
+        """)
+        print("'movie_genres' table created or already exists.")
+        
+        # Create images table
+        print("Creating 'images' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS images (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                movie_id INT,
+                type ENUM('backdrop', 'logo', 'poster') NOT NULL,
+                file_path VARCHAR(255),
+                aspect_ratio DECIMAL(5,3),
+                height INT,
+                width INT,
+                vote_average DECIMAL(3,1),
+                vote_count INT,
+                iso_639_1 VARCHAR(10),
+                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+            );
+        """)
+        print("'images' table created or already exists.")
+        
+        # Create movie_cast table
+        print("Creating 'movie_cast' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS movie_cast (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                movie_id INT,
+                person_id INT,
+                cast_order INT,
+                credit_id VARCHAR(50),
+                character_name VARCHAR(255),  -- Renamed from 'character'
+                name VARCHAR(255),
+                original_name VARCHAR(255),
+                gender INT,
+                popularity DECIMAL(8,3),
+                profile_path VARCHAR(255),
+                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+            );
+        """)
+        print("'movie_cast' table created or already exists.")
+        
+        # Create movie_crew table
+        print("Creating 'movie_crew' table...")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS movie_crew (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                movie_id INT,
+                person_id INT,
+                credit_id VARCHAR(50),
+                department VARCHAR(100),
+                job VARCHAR(100),
+                name VARCHAR(255),
+                original_name VARCHAR(255),
+                gender INT,
+                popularity DECIMAL(8,3),
+                profile_path VARCHAR(255),
+                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+            );
+        """)
+        print("'movie_crew' table created or already exists.")
+        
+        connection.commit()
+        print("All tables have been created successfully.")
+    except Error as e:
+        print("Error while creating tables:", e)
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("Database connection closed.")
+
+# For quick testing when running this module directly
+if __name__ == '__main__':
+    print("Initializing database...")
+    initialize_database()
+    print("Creating tables...")
+    create_tables()
