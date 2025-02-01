@@ -34,6 +34,14 @@
         "documentation": {}
     },
     {
+        "label": "Error",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
         "label": "headers",
         "importPath": "common",
         "description": "common",
@@ -89,6 +97,14 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -218,6 +234,22 @@
         "description": "getApiData",
         "isExtraImport": true,
         "detail": "getApiData",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_connection",
+        "importPath": "services.db",
+        "description": "services.db",
+        "isExtraImport": true,
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_database",
+        "importPath": "services.db",
+        "description": "services.db",
+        "isExtraImport": true,
+        "detail": "services.db",
         "documentation": {}
     },
     {
@@ -482,6 +514,24 @@
         "documentation": {}
     },
     {
+        "label": "get_db_connection",
+        "kind": 2,
+        "importPath": "services.db",
+        "description": "services.db",
+        "peekOfCode": "def get_db_connection():\n    \"\"\"\n    Establish a connection to the MySQL database using credentials from .env.\n    \"\"\"\n    try:\n        connection = mysql.connector.connect(\n            host=os.getenv('MYSQL_HOST', 'localhost'),\n            user=os.getenv('MYSQL_USER', 'root'),\n            password=os.getenv('MYSQL_PASSWORD', 'root12345'),\n            database=os.getenv('MYSQL_DATABASE', 'movie_db')",
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_database",
+        "kind": 2,
+        "importPath": "services.db",
+        "description": "services.db",
+        "peekOfCode": "def initialize_database():\n    \"\"\"\n    Create the MySQL database if it doesn't exist.\n    This function connects without specifying a database, creates the database,\n    and then closes the connection.\n    \"\"\"\n    try:\n        connection = mysql.connector.connect(\n            host=os.getenv('MYSQL_HOST', 'localhost'),\n            user=os.getenv('MYSQL_USER', 'root'),",
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
         "label": "get_all_genres",
         "kind": 2,
         "importPath": "services.movie_api",
@@ -585,7 +635,16 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def movies_by_page(page):\n    try:\n        movies = movie_api.get_movie_credits(page)\n        # movies = movie_api.get_movies_by_page(page)\n        return jsonify(movies)\n    except Exception as e:\n        # Return a JSON error message in case of failure\n        return jsonify({\"error\": str(e)}), 500\nif __name__ == '__main__':\n    # Use environment variables for host and port if needed",
+        "peekOfCode": "def movies_by_page(page):\n    try:\n        movies = movie_api.get_movie_credits(page)\n        # movies = movie_api.get_movies_by_page(page)\n        return jsonify(movies)\n    except Exception as e:\n        # Return a JSON error message in case of failure\n        return jsonify({\"error\": str(e)}), 500\n# Use a guard to ensure initialization runs only once.\n@app.before_request",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "before_request_func",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def before_request_func():\n    if not hasattr(app, '_initialized'):\n        print(\"Initializing the database...\")\n        initialize_database()\n        app._initialized = True\nif __name__ == '__main__':\n    print(\"Starting Flask app...\", flush=True)\n    app.run(debug=True)",
         "detail": "app",
         "documentation": {}
     },
@@ -594,7 +653,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"",
+        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\ntry:\n    # Initialize the database if it doesn't exist\n    initialize_database()\nexcept Exception as e:\n    print(\"Error while connecting to the database:\", e)\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"",
         "detail": "app",
         "documentation": {}
     },
@@ -603,7 +662,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }",
+        "peekOfCode": "app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\ntry:\n    # Initialize the database if it doesn't exist\n    initialize_database()\nexcept Exception as e:\n    print(\"Error while connecting to the database:\", e)\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])",
         "detail": "app",
         "documentation": {}
     }
