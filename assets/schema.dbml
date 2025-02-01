@@ -1,19 +1,19 @@
 // Movies table: stores basic movie information.
 Table movies {
-  id          int         [pk, increment] // Internal auto-increment primary key.
-  movieId     int         [unique]        // Unique movie ID from the API.
-  adult       boolean
-  backdrop_path varchar(255)
+  id                int         [pk, increment] // Internal auto-increment primary key.
+  movieId           int         [unique]        // Unique movie ID from the API.
+  adult             boolean
+  backdrop_path     varchar(255)
   original_language varchar(10)
   original_title    varchar(255)
-  overview    text
-  popularity  decimal(8,3)
-  poster_path varchar(255)
-  release_date date
-  title       varchar(255)
-  video       boolean
-  vote_average decimal(3,1)
-  vote_count  int
+  overview          text
+  popularity        decimal(8,3)
+  poster_path       varchar(255)
+  release_date      date
+  title             varchar(255)
+  video             boolean
+  vote_average      decimal(3,1)
+  vote_count        int
 }
 
 // Genres table: stores available genres.
@@ -22,11 +22,10 @@ Table genres {
   name varchar(50)
 }
 
-// Join table: connects movies to genres (many-to-many relationship).
+// Join table for movies and genres.
 Table movie_genres {
-  movie_id int  [ref: > movies.id]
-  genre_id int  [ref: > genres.id]
-  primary key (movie_id, genre_id)
+  movie_id int [ref: > movies.id, pk]
+  genre_id int [ref: > genres.id, pk]
 }
 
 // Images table: stores images for movies.
@@ -43,32 +42,25 @@ Table images {
   iso_639_1    varchar(10)
 }
 
-// Movie Cast table: stores cast details for a movie.
-// Uses the API's unique credit_id as the primary key.
-Table movie_cast {
-  credit_id      varchar(50)  [pk]
-  movie_id       int          [ref: > movies.id]
-  person_id      int
-  cast_order     int
-  character_name varchar(255) // Renamed from 'character'
-  name           varchar(255)
-  original_name  varchar(255)
-  gender         int
-  popularity     decimal(8,3)
-  profile_path   varchar(255)
+// Persons table: stores unique information about individuals (actors, directors, etc.).
+Table persons {
+  id                   int         [pk]  // API's person ID.
+  name                 varchar(255)
+  original_name        varchar(255)
+  gender               int
+  popularity           decimal(8,3)
+  profile_path         varchar(255)
+  known_for_department varchar(100)
 }
 
-// Movie Crew table: stores crew details for a movie.
-// Uses the API's unique credit_id as the primary key.
-Table movie_crew {
-  credit_id      varchar(50)  [pk]
-  movie_id       int          [ref: > movies.id]
-  person_id      int
-  department     varchar(100)
-  job            varchar(100)
-  name           varchar(255)
-  original_name  varchar(255)
-  gender         int
-  popularity     decimal(8,3)
-  profile_path   varchar(255)
+// Movie credits table: unifies cast and crew credit lines.
+Table movie_credits {
+  credit_id  varchar(50) [pk]  // Unique credit line ID from the API.
+  movie_id   int         [ref: > movies.id]
+  person_id  int         [ref: > persons.id]
+  type       enum("cast", "crew") // Distinguishes cast from crew.
+  cast_order int         // Applicable for cast records (NULL for crew).
+  character  varchar(255) // Applicable for cast records (NULL for crew).
+  department varchar(100) // Applicable for crew records (NULL for cast).
+  job        varchar(100) // Applicable for crew records (NULL for cast).
 }
