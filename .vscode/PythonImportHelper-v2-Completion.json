@@ -116,6 +116,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -210,6 +218,15 @@
         "description": "getApiData",
         "isExtraImport": true,
         "detail": "getApiData",
+        "documentation": {}
+    },
+    {
+        "label": "services.movie_api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "detail": "services.movie_api",
         "documentation": {}
     },
     {
@@ -465,11 +482,92 @@
         "documentation": {}
     },
     {
+        "label": "get_all_genres",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_all_genres():\n    \"\"\"\n    Fetch all movie genres.\n    Endpoint: /genre/movie/list\n    \"\"\"\n    url = f\"{BASE_URL}/genre/movie/list\"\n    response = requests.get(url, headers=HEADERS)\n    response.raise_for_status()\n    return response.json()\ndef get_movies_by_genre(genre):",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movies_by_genre",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_movies_by_genre(genre):\n    \"\"\"\n    Fetch movies filtered by a specific genre.\n    Endpoint: /discover/movie?with_genres=<genre>\n    :param genre: Genre id as a string or integer.\n    \"\"\"\n    url = f\"{BASE_URL}/discover/movie\"\n    params = {\n        \"with_genres\": genre\n    }",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movies_by_page",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_movies_by_page(page):\n    \"\"\"\n    Fetch popular movies for a given page.\n    Endpoint: /movie/popular?page=<page>\n    :param page: Page number as an integer.\n    \"\"\"\n    url = f\"{BASE_URL}/movie/popular\"\n    params = {\n        \"page\": page\n    }",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_by_id",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_movie_by_id(movie_id):\n    \"\"\"\n    Fetch movie details by its ID.\n    Endpoint: /movie/<movie_id>\n    :param movie_id: The movie's ID.\n    \"\"\"\n    url = f\"{BASE_URL}/movie/{movie_id}\"\n    response = requests.get(url, headers=HEADERS)\n    response.raise_for_status()\n    return response.json()",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_images",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_movie_images(movie_id):\n    \"\"\"\n    Fetch all images for a specific movie.\n    Endpoint: /movie/<movie_id>/images\n    :param movie_id: The movie's ID.\n    \"\"\"\n    url = f\"{BASE_URL}/movie/{movie_id}/images\"\n    response = requests.get(url, headers=HEADERS)\n    response.raise_for_status()\n    return response.json()",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_credits",
+        "kind": 2,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "def get_movie_credits(movie_id):\n    \"\"\"\n    Fetch cast and crew information for a specific movie.\n    Endpoint: /movie/<movie_id>/credits\n    :param movie_id: The movie's ID.\n    \"\"\"\n    url = f\"{BASE_URL}/movie/{movie_id}/credits\"\n    response = requests.get(url, headers=HEADERS)\n    response.raise_for_status()\n    return response.json()",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_URL",
+        "kind": 5,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "BASE_URL = 'https://api.themoviedb.org/3'\n# Retrieve the TMDb Bearer token from environment variables\nTMDB_BEARER_TOKEN = os.environ.get(\"TMDB_BEARER_TOKEN\")\nif not TMDB_BEARER_TOKEN:\n    raise Exception(\"TMDB_BEARER_TOKEN is not set in the environment variables.\")\n# Define common headers for the API requests\nHEADERS = {\n    \"Authorization\": f\"Bearer {TMDB_BEARER_TOKEN}\",\n    \"Content-Type\": \"application/json;charset=utf-8\"\n}",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "TMDB_BEARER_TOKEN",
+        "kind": 5,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "TMDB_BEARER_TOKEN = os.environ.get(\"TMDB_BEARER_TOKEN\")\nif not TMDB_BEARER_TOKEN:\n    raise Exception(\"TMDB_BEARER_TOKEN is not set in the environment variables.\")\n# Define common headers for the API requests\nHEADERS = {\n    \"Authorization\": f\"Bearer {TMDB_BEARER_TOKEN}\",\n    \"Content-Type\": \"application/json;charset=utf-8\"\n}\ndef get_all_genres():\n    \"\"\"",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "HEADERS",
+        "kind": 5,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "peekOfCode": "HEADERS = {\n    \"Authorization\": f\"Bearer {TMDB_BEARER_TOKEN}\",\n    \"Content-Type\": \"application/json;charset=utf-8\"\n}\ndef get_all_genres():\n    \"\"\"\n    Fetch all movie genres.\n    Endpoint: /genre/movie/list\n    \"\"\"\n    url = f\"{BASE_URL}/genre/movie/list\"",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
         "label": "home",
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\nif __name__ == '__main__':",
+        "peekOfCode": "def home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\n# Testing methods from the movie_api.py file",
         "detail": "app",
         "documentation": {}
     },
@@ -478,7 +576,16 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\nif __name__ == '__main__':\n    # Use environment variables for host and port if needed\n    app.run(debug=True)",
+        "peekOfCode": "def get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\n# Testing methods from the movie_api.py file\n@app.route('/api/movies/page/<int:page>', methods=['GET'])\ndef movies_by_page(page):\n    try:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "movies_by_page",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def movies_by_page(page):\n    try:\n        movies = movie_api.get_movie_credits(page)\n        # movies = movie_api.get_movies_by_page(page)\n        return jsonify(movies)\n    except Exception as e:\n        # Return a JSON error message in case of failure\n        return jsonify({\"error\": str(e)}), 500\nif __name__ == '__main__':\n    # Use environment variables for host and port if needed",
         "detail": "app",
         "documentation": {}
     },
