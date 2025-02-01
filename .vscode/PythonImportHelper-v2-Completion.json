@@ -1,0 +1,443 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "errorcode",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "errorcode",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "VALID_TABLES",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "mysql",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_users",
+        "importPath": "services.user_service",
+        "description": "services.user_service",
+        "isExtraImport": true,
+        "detail": "services.user_service",
+        "documentation": {}
+    },
+    {
+        "label": "create_user",
+        "importPath": "services.user_service",
+        "description": "services.user_service",
+        "isExtraImport": true,
+        "detail": "services.user_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_by_id",
+        "importPath": "services.user_service",
+        "description": "services.user_service",
+        "isExtraImport": true,
+        "detail": "services.user_service",
+        "documentation": {}
+    },
+    {
+        "label": "seed",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seed",
+        "description": "seed",
+        "detail": "seed",
+        "documentation": {}
+    },
+    {
+        "label": "get_movies",
+        "importPath": "getApiData",
+        "description": "getApiData",
+        "isExtraImport": true,
+        "detail": "getApiData",
+        "documentation": {}
+    },
+    {
+        "label": "func0",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def func0(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func1(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func2(headers):\n    url = \"someurl\"",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "func1",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def func1(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func2(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func3(headers):\n    url = \"someurl\"",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "func2",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def func2(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func3(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func4(headers):\n    url = \"someurl\"",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "func3",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def func3(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef func4(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef insert_multiple_records(table_name, data_rows):\n    \"\"\"",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "func4",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def func4(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)\n    print(response.text)\ndef insert_multiple_records(table_name, data_rows):\n    \"\"\"\n    Insert multiple records into a valid table from our allow list.\n    :param table_name: Name of the table to insert the data\n    :param data_rows: A list of tuples, where each tuple represents one row of data\n    \"\"\"",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "insert_multiple_records",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def insert_multiple_records(table_name, data_rows):\n    \"\"\"\n    Insert multiple records into a valid table from our allow list.\n    :param table_name: Name of the table to insert the data\n    :param data_rows: A list of tuples, where each tuple represents one row of data\n    \"\"\"\n    #Prevent SQL injection by checking that the table name is valid using a whitelist\n    # 1) Ensure the table is in the allow list\n    if table_name not in VALID_TABLES:\n        raise ValueError(f\"Table '{table_name}' is not in the allow list and cannot be used.\")",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "def main(): \n    print(\"hi\")\n    insert_multiple_records(\"new_table_test\", [(\"11\", \"John\", \"2021-08-09\"), (\"21\", \"Peter\", \"2021-08-09\"), (\"31\", \"Amy\", \"2021-08-09\"), (\"4\", \"Hannah\", \"2021-08-09\"), (\"15\", \"Michael\", \"2021-08-09\")])\nif __name__ == \"__main__\":\n    main()",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "mydb",
+        "kind": 5,
+        "importPath": "old stuff.api_data_retrieve",
+        "description": "old stuff.api_data_retrieve",
+        "peekOfCode": "mydb = mysql.connector.connect(\n    host=\"127.0.0.2\",\n    port=\"3333\",\n    user=\"natanel\",\n    password=\"nat72836\",\n    database={DATABASE_NAME}\n)\ndef func0(headers):\n    url = \"someurl\"\n    response = requests.get(url, headers=headers)",
+        "detail": "old stuff.api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "old stuff.common",
+        "description": "old stuff.common",
+        "peekOfCode": "DATABASE_NAME = \"natanel\"\nVALID_TABLES = {\n    \"new_table_test\": [\"idnew_table_test\", \"new_table_testcol\", \"new_table_testcol1\"],\n}\nheaders = {\n    \"accept\": \"application/json\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWUyNWMxYWM5NzM5MmQzMjdlYzg3NDExNzVlNjczMSIsIm5iZiI6MTczNzcxNjM2NC45NTUwMDAyLCJzdWIiOiI2NzkzNzI4Y2ZlYWM5YjcxMjYyMzhlZmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4gAL2BOokc3z0rsY9utH5zkfAsw4D7zjdafxmKuuKBA\"\n}",
+        "detail": "old stuff.common",
+        "documentation": {}
+    },
+    {
+        "label": "VALID_TABLES",
+        "kind": 5,
+        "importPath": "old stuff.common",
+        "description": "old stuff.common",
+        "peekOfCode": "VALID_TABLES = {\n    \"new_table_test\": [\"idnew_table_test\", \"new_table_testcol\", \"new_table_testcol1\"],\n}\nheaders = {\n    \"accept\": \"application/json\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWUyNWMxYWM5NzM5MmQzMjdlYzg3NDExNzVlNjczMSIsIm5iZiI6MTczNzcxNjM2NC45NTUwMDAyLCJzdWIiOiI2NzkzNzI4Y2ZlYWM5YjcxMjYyMzhlZmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4gAL2BOokc3z0rsY9utH5zkfAsw4D7zjdafxmKuuKBA\"\n}",
+        "detail": "old stuff.common",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "old stuff.common",
+        "description": "old stuff.common",
+        "peekOfCode": "headers = {\n    \"accept\": \"application/json\",\n    \"Authorization\": \"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWUyNWMxYWM5NzM5MmQzMjdlYzg3NDExNzVlNjczMSIsIm5iZiI6MTczNzcxNjM2NC45NTUwMDAyLCJzdWIiOiI2NzkzNzI4Y2ZlYWM5YjcxMjYyMzhlZmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4gAL2BOokc3z0rsY9utH5zkfAsw4D7zjdafxmKuuKBA\"\n}",
+        "detail": "old stuff.common",
+        "documentation": {}
+    },
+    {
+        "label": "mydb",
+        "kind": 5,
+        "importPath": "old stuff.create_db_script",
+        "description": "old stuff.create_db_script",
+        "peekOfCode": "mydb = mysql.connector.connect(\n    host=\"127.0.0.2\",\n    port=\"3333\",\n    user=\"natanel\",\n    password=\"nat72836\",\n    database=DATABASE_NAME\n)\ncursor = mydb.cursor()\n#Use https://www.w3schools.com/python/python_mysql_create_table.asp\n# 1. country",
+        "detail": "old stuff.create_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "old stuff.create_db_script",
+        "description": "old stuff.create_db_script",
+        "peekOfCode": "cursor = mydb.cursor()\n#Use https://www.w3schools.com/python/python_mysql_create_table.asp\n# 1. country\ntry:\n    cursor.execute(\"\"\"\n        CREATE TABLE country (\n            country_id INT AUTO_INCREMENT PRIMARY KEY,\n            name       VARCHAR(255) NOT NULL,\n            iso_code   VARCHAR(3),\n            region     VARCHAR(255),",
+        "detail": "old stuff.create_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "get_movies",
+        "kind": 2,
+        "importPath": "old stuff.getmovie",
+        "description": "old stuff.getmovie",
+        "peekOfCode": "def get_movies():\n    url = \"https://api.themoviedb.org/3/genre/movie/list\"\n    headers = {\n        \"Authorization\": f\"Bearer {os.getenv('TOKEN')}\"\n    }\n    try:\n        response = requests.get(url, headers=headers)\n        response.raise_for_status()\n        return response.json()\n    except requests.exceptions.RequestException as e:",
+        "detail": "old stuff.getmovie",
+        "documentation": {}
+    },
+    {
+        "label": "initialize_db",
+        "kind": 2,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "def initialize_db():\n    logger.info(\"Initializing database...\")\n    try:\n        seed.run_seed()  # Ensure seed.py has a function `run_seed()`\n        logger.info(\"Database initialized successfully.\")\n    except Exception as e:\n        logger.error(f\"Error initializing database: {e}\")\ninitialize_db()\n@app.route('/users', methods=['GET'])\ndef get_users():",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "get_users",
+        "kind": 2,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "def get_users():\n    try:\n        users = get_all_users()\n        return jsonify({\"success\": True, \"data\": users})\n    except Exception as e:\n        logger.error(f\"Error fetching users: {e}\")\n        return jsonify({\"success\": False, \"message\": \"Internal Server Error\"}), 500\n@app.route('/users/<int:user_id>', methods=['GET'])\ndef get_user(user_id):\n    if user_id <= 0:",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "get_user",
+        "kind": 2,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "def get_user(user_id):\n    if user_id <= 0:\n        return jsonify({\"success\": False, \"message\": \"User ID must be a positive integer\"}), 400\n    try:\n        user = get_user_by_id(user_id)\n        if not user:\n            return jsonify({\"success\": False, \"message\": \"User not found\"}), 404\n        return jsonify({\"success\": True, \"data\": user})\n    except Exception as e:\n        logger.error(f\"Error fetching user {user_id}: {e}\")",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "add_user",
+        "kind": 2,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "def add_user():\n    data = request.json\n    if not data or 'name' not in data:\n        return jsonify({\"success\": False, \"message\": \"Invalid input\"}), 400\n    try:\n        result = create_user(data)\n        return jsonify({\"success\": True, \"message\": \"User added successfully\", \"data\": result}), 201\n    except Exception as e:\n        logger.error(f\"Error adding user: {e}\")\n        return jsonify({\"success\": False, \"message\": \"Internal Server Error\"}), 500",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_movies",
+        "kind": 2,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "def fetch_movies():\n    try:\n        movies = get_movies()\n        return jsonify({\"success\": True, \"data\": movies})\n    except Exception as e:\n        logger.error(f\"Error fetching movies: {e}\")\n        return jsonify({\"success\": False, \"message\": \"Failed to fetch movies\"}), 500\nif __name__ == '__main__':\n    logger.info(\"Starting Flask server...\")\n    app.run(debug=True)",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "logger = logging.getLogger(__name__)\napp = Flask(__name__)\n# MySQL configuration\napp.config['MYSQL_HOST'] = os.getenv('DB_HOST')\napp.config['MYSQL_USER'] = os.getenv('DB_USER')\napp.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')\napp.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "app = Flask(__name__)\n# MySQL configuration\napp.config['MYSQL_HOST'] = os.getenv('DB_HOST')\napp.config['MYSQL_USER'] = os.getenv('DB_USER')\napp.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')\napp.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():\n    logger.info(\"Initializing database...\")",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['MYSQL_HOST']",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "app.config['MYSQL_HOST'] = os.getenv('DB_HOST')\napp.config['MYSQL_USER'] = os.getenv('DB_USER')\napp.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')\napp.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():\n    logger.info(\"Initializing database...\")\n    try:\n        seed.run_seed()  # Ensure seed.py has a function `run_seed()`",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['MYSQL_USER']",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "app.config['MYSQL_USER'] = os.getenv('DB_USER')\napp.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')\napp.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():\n    logger.info(\"Initializing database...\")\n    try:\n        seed.run_seed()  # Ensure seed.py has a function `run_seed()`\n        logger.info(\"Database initialized successfully.\")",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['MYSQL_PASSWORD']",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "app.config['MYSQL_PASSWORD'] = os.getenv('DB_PASSWORD')\napp.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():\n    logger.info(\"Initializing database...\")\n    try:\n        seed.run_seed()  # Ensure seed.py has a function `run_seed()`\n        logger.info(\"Database initialized successfully.\")\n    except Exception as e:",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['MYSQL_DATABASE']",
+        "kind": 5,
+        "importPath": "old stuff.gpt",
+        "description": "old stuff.gpt",
+        "peekOfCode": "app.config['MYSQL_DATABASE'] = os.getenv('DB_NAME')\nmysql.init_app(app)\n# Run seed script if database is not initialized\ndef initialize_db():\n    logger.info(\"Initializing database...\")\n    try:\n        seed.run_seed()  # Ensure seed.py has a function `run_seed()`\n        logger.info(\"Database initialized successfully.\")\n    except Exception as e:\n        logger.error(f\"Error initializing database: {e}\")",
+        "detail": "old stuff.gpt",
+        "documentation": {}
+    },
+    {
+        "label": "query_1",
+        "kind": 2,
+        "importPath": "old stuff.queries_db_script",
+        "description": "old stuff.queries_db_script",
+        "peekOfCode": "def query_1(company_name):\n    \"\"\"\n    get_total_revenue_for_company -\n    Returns the total revenue for a given production company by summing\n    (box_office - budget) for all its movies. May return negative if\n    budgets exceed box_office totals.\n    :param company_name: The name of the production company (string).\n    :return: A float (total revenue) or None if the company doesn't exist\n        or has no movies.\n    \"\"\"",
+        "detail": "old stuff.queries_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "query_2",
+        "kind": 2,
+        "importPath": "old stuff.queries_db_script",
+        "description": "old stuff.queries_db_script",
+        "peekOfCode": "def query_2(movie_name):\n    \"\"\"\n    get_top_profitable_movies_by_name\n    Searches for the top 10 most profitable movies containing the given movie name.\n    :param movie_name: The movie name keyword to search for (string).\n    :return: A list of tuples (title, production_company, revenue) sorted by profitability.\n    \"\"\"\n    try:\n        # Establish database connection\n        mydb = mysql.connector.connect(",
+        "detail": "old stuff.queries_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "query_3",
+        "kind": 2,
+        "importPath": "old stuff.queries_db_script",
+        "description": "old stuff.queries_db_script",
+        "peekOfCode": "def query_3(production_company_name):\n    \"\"\"\n    get_top_countries_by_movies:\n    Returns the top 5 countries where a given production company has produced the most movies.\n    :param production_company_name: The name of the production company (string).\n    :return: A list of tuples (country_name, movie_count) ordered by the most movies.\n    \"\"\"\n    try:\n        # Establish database connection\n        mydb = mysql.connector.connect(",
+        "detail": "old stuff.queries_db_script",
+        "documentation": {}
+    }
+]
