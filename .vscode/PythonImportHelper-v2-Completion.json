@@ -270,44 +270,35 @@
         "documentation": {}
     },
     {
-        "label": "services.movie_api",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
-        "detail": "services.movie_api",
-        "documentation": {}
-    },
-    {
         "label": "get_all_genres",
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
+        "importPath": "movie_api",
+        "description": "movie_api",
         "isExtraImport": true,
-        "detail": "services.movie_api",
+        "detail": "movie_api",
         "documentation": {}
     },
     {
         "label": "get_movies_by_page",
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
+        "importPath": "movie_api",
+        "description": "movie_api",
         "isExtraImport": true,
-        "detail": "services.movie_api",
+        "detail": "movie_api",
         "documentation": {}
     },
     {
         "label": "get_movie_credits",
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
+        "importPath": "movie_api",
+        "description": "movie_api",
         "isExtraImport": true,
-        "detail": "services.movie_api",
+        "detail": "movie_api",
         "documentation": {}
     },
     {
         "label": "get_movie_images",
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
+        "importPath": "movie_api",
+        "description": "movie_api",
         "isExtraImport": true,
-        "detail": "services.movie_api",
+        "detail": "movie_api",
         "documentation": {}
     },
     {
@@ -332,6 +323,15 @@
         "description": "services.db",
         "isExtraImport": true,
         "detail": "services.db",
+        "documentation": {}
+    },
+    {
+        "label": "services.movie_api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "detail": "services.movie_api",
         "documentation": {}
     },
     {
