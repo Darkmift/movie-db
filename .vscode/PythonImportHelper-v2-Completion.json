@@ -108,6 +108,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -133,6 +141,22 @@
     },
     {
         "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -438,6 +462,42 @@
         "description": "old stuff.queries_db_script",
         "peekOfCode": "def query_3(production_company_name):\n    \"\"\"\n    get_top_countries_by_movies:\n    Returns the top 5 countries where a given production company has produced the most movies.\n    :param production_company_name: The name of the production company (string).\n    :return: A list of tuples (country_name, movie_count) ordered by the most movies.\n    \"\"\"\n    try:\n        # Establish database connection\n        mydb = mysql.connector.connect(",
         "detail": "old stuff.queries_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\nif __name__ == '__main__':",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_data",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }\n    return jsonify(sample_data)\nif __name__ == '__main__':\n    # Use environment variables for host and port if needed\n    app.run(debug=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\napp.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config['SECRET_KEY']",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')\n@app.route('/')\ndef home():\n    return \"Hello, Flask with dotenv!\"\n@app.route('/api/data', methods=['GET'])\ndef get_data():\n    sample_data = {\n        \"message\": \"Hello from Flask API using dotenv\",\n        \"status\": \"success\"\n    }",
+        "detail": "app",
         "documentation": {}
     }
 ]
