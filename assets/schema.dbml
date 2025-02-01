@@ -1,37 +1,39 @@
 // Movies table: stores basic movie information.
 Table movies {
-  id                 int        [pk] // TMDb movie ID
-  adult              boolean
-  backdrop_path      varchar(255)
-  original_language  varchar(10)
-  original_title     varchar(255)
-  overview           text
-  popularity         decimal(8,3)
-  poster_path        varchar(255)
-  release_date       date
-  title              varchar(255)
-  video              boolean
-  vote_average       decimal(3,1)
-  vote_count         int
+  id          int         [pk, increment] // Internal auto-increment primary key.
+  movieId     int         [unique]        // Unique movie ID from the API.
+  adult       boolean
+  backdrop_path varchar(255)
+  original_language varchar(10)
+  original_title    varchar(255)
+  overview    text
+  popularity  decimal(8,3)
+  poster_path varchar(255)
+  release_date date
+  title       varchar(255)
+  video       boolean
+  vote_average decimal(3,1)
+  vote_count  int
 }
 
 // Genres table: stores available genres.
 Table genres {
-  id     int        [pk] // Genre ID
-  name   varchar(50)
+  id   int         [pk]
+  name varchar(50)
 }
 
-// Join table: connects movies to genres (many-to-many)
+// Join table: connects movies to genres (many-to-many relationship).
 Table movie_genres {
-  movie_id  int  [pk, ref: > movies.id]
-  genre_id  int  [pk, ref: > genres.id]
+  movie_id int  [ref: > movies.id]
+  genre_id int  [ref: > genres.id]
+  primary key (movie_id, genre_id)
 }
 
-// Images table: stores images for movies (backdrops, logos, posters)
+// Images table: stores images for movies.
 Table images {
   id           int         [pk, increment]
   movie_id     int         [ref: > movies.id]
-  type         varchar(20) // values: 'backdrop', 'logo', 'poster'
+  type         enum("backdrop", "logo", "poster")
   file_path    varchar(255)
   aspect_ratio decimal(5,3)
   height       int
@@ -41,32 +43,32 @@ Table images {
   iso_639_1    varchar(10)
 }
 
-// Cast table: stores cast details for a movie.
+// Movie Cast table: stores cast details for a movie.
+// Uses the API's unique credit_id as the primary key.
 Table movie_cast {
-  id            int         [pk, increment]
-  movie_id      int         [ref: > movies.id]
-  person_id     int         // TMDb person ID
-  cast_order    int         // order field from JSON
-  credit_id     varchar(50)
-  character     varchar(255)
-  name          varchar(255)
-  original_name varchar(255)
-  gender        int
-  popularity    decimal(8,3)
-  profile_path  varchar(255)
+  credit_id      varchar(50)  [pk]
+  movie_id       int          [ref: > movies.id]
+  person_id      int
+  cast_order     int
+  character_name varchar(255) // Renamed from 'character'
+  name           varchar(255)
+  original_name  varchar(255)
+  gender         int
+  popularity     decimal(8,3)
+  profile_path   varchar(255)
 }
 
-// Crew table: stores crew details for a movie.
+// Movie Crew table: stores crew details for a movie.
+// Uses the API's unique credit_id as the primary key.
 Table movie_crew {
-  id            int         [pk, increment]
-  movie_id      int         [ref: > movies.id]
-  person_id     int         // TMDb person ID
-  credit_id     varchar(50)
-  department    varchar(100)
-  job           varchar(100)
-  name          varchar(255)
-  original_name varchar(255)
-  gender        int
-  popularity    decimal(8,3)
-  profile_path  varchar(255)
+  credit_id      varchar(50)  [pk]
+  movie_id       int          [ref: > movies.id]
+  person_id      int
+  department     varchar(100)
+  job            varchar(100)
+  name           varchar(255)
+  original_name  varchar(255)
+  gender         int
+  popularity     decimal(8,3)
+  profile_path   varchar(255)
 }
