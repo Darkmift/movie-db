@@ -42,6 +42,14 @@
         "documentation": {}
     },
     {
+        "label": "Error",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
         "label": "headers",
         "importPath": "common",
         "description": "common",
@@ -97,6 +105,14 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -196,6 +212,14 @@
         "documentation": {}
     },
     {
+        "label": "get_db_connection",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
         "label": "get_all_users",
         "importPath": "services.user_service",
         "description": "services.user_service",
@@ -237,6 +261,56 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "services.movie_api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_genres",
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "isExtraImport": true,
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movies_by_page",
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "isExtraImport": true,
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_credits",
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "isExtraImport": true,
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "get_movie_images",
+        "importPath": "services.movie_api",
+        "description": "services.movie_api",
+        "isExtraImport": true,
+        "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
         "label": "create_tables",
         "importPath": "services.db",
         "description": "services.db",
@@ -258,15 +332,6 @@
         "description": "services.db",
         "isExtraImport": true,
         "detail": "services.db",
-        "documentation": {}
-    },
-    {
-        "label": "services.movie_api",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "services.movie_api",
-        "description": "services.movie_api",
-        "detail": "services.movie_api",
         "documentation": {}
     },
     {
@@ -549,6 +614,15 @@
         "documentation": {}
     },
     {
+        "label": "execute_query",
+        "kind": 2,
+        "importPath": "services.db",
+        "description": "services.db",
+        "peekOfCode": "def execute_query(query, params=None, commit=False, fetchone=False, fetchall=False):\n    \"\"\"\n    A helper function to execute a given SQL query using the DB connection.\n    :param query: SQL query to be executed.\n    :param params: Optional parameters to use with the query.\n    :param commit: If True, commit the transaction.\n    :param fetchone: If True, return a single row.\n    :param fetchall: If True, return all rows.\n    :return: Result of the query if fetching, otherwise None.\n    \"\"\"",
+        "detail": "services.db",
+        "documentation": {}
+    },
+    {
         "label": "get_all_genres",
         "kind": 2,
         "importPath": "services.movie_api",
@@ -627,6 +701,42 @@
         "description": "services.movie_api",
         "peekOfCode": "HEADERS = {\n    \"Authorization\": f\"Bearer {TMDB_BEARER_TOKEN}\",\n    \"Content-Type\": \"application/json;charset=utf-8\"\n}\ndef get_all_genres():\n    \"\"\"\n    Fetch all movie genres.\n    Endpoint: /genre/movie/list\n    \"\"\"\n    url = f\"{BASE_URL}/genre/movie/list\"",
         "detail": "services.movie_api",
+        "documentation": {}
+    },
+    {
+        "label": "seed_movies",
+        "kind": 2,
+        "importPath": "services.seed",
+        "description": "services.seed",
+        "peekOfCode": "def seed_movies():\n    \"\"\"\n    Seed the movies table by fetching 250 pages of popular movies\n    from the TMDb API if the table is empty.\n    Rate limit: 10 pages per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding movies.\")\n        return",
+        "detail": "services.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_genres",
+        "kind": 2,
+        "importPath": "services.seed",
+        "description": "services.seed",
+        "peekOfCode": "def seed_genres():\n    \"\"\"\n    Seed the genres table by querying the TMDb API.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding genres.\")\n        return\n    try:\n        cursor = connection.cursor()",
+        "detail": "services.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_cast_and_crew",
+        "kind": 2,
+        "importPath": "services.seed",
+        "description": "services.seed",
+        "peekOfCode": "def seed_cast_and_crew():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for cast and crew,\n    and insert the data into movie_cast and movie_crew tables.\n    Rate limit: 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding cast and crew.\")\n        return",
+        "detail": "services.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_images",
+        "kind": 2,
+        "importPath": "services.seed",
+        "description": "services.seed",
+        "peekOfCode": "def seed_images():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for images and insert them\n    into the images table.\n    Rate limit: 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding images.\")\n        return",
+        "detail": "services.seed",
         "documentation": {}
     },
     {
