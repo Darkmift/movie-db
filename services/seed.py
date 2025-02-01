@@ -12,16 +12,18 @@ from movie_api import (
     get_movie_images
 )
 # Import database connection function.
-from db import get_db_connection
+from db import get_db_connection, initialize_database, create_tables
 
 # Load environment variables
 load_dotenv()
+
 
 def seed_movies():
     """
     Seed the movies table by fetching 250 pages of popular movies
     from the TMDb API if the table is empty.
     Rate limit: 10 pages per second.
+    Uses executemany to batch insert movie rows.
     """
     connection = get_db_connection()
     if connection is None:
@@ -39,19 +41,20 @@ def seed_movies():
         print("Seeding movies data from API...")
         total_pages = 250
         pages_processed = 0
+        batch_rows = []  # collect rows for batch insert
+
+        insert_query = """
+            INSERT IGNORE INTO movies 
+            (movieId, adult, backdrop_path, original_language, original_title,
+            overview, popularity, poster_path, release_date, title, video, vote_average, vote_count)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
+
         for page in range(1, total_pages + 1):
             try:
                 data = get_movies_by_page(page)
                 movies = data.get("results", [])
                 for movie in movies:
-                    # Insert movie data.
-                    # We use the API's movie id as movieId and let our internal id be auto-generated.
-                    insert_query = """
-                        INSERT IGNORE INTO movies 
-                        (movieId, adult, backdrop_path, original_language, original_title,
-                        overview, popularity, poster_path, release_date, title, video, vote_average, vote_count)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """
                     values = (
                         movie.get("id"),
                         movie.get("adult"),
@@ -67,13 +70,18 @@ def seed_movies():
                         movie.get("vote_average"),
                         movie.get("vote_count")
                     )
-                    cursor.execute(insert_query, values)
-                connection.commit()
+                    batch_rows.append(values)
+                # Batch insert for each page
+                if batch_rows:
+                    cursor.executemany(insert_query, batch_rows)
+                    connection.commit()
+                    batch_rows = []  # clear the batch
+
                 pages_processed += 1
                 print(f"Seeded page {page} with {len(movies)} movies.")
             except Exception as e:
                 print(f"Error seeding page {page}: {e}")
-            # After every 10 pages, pause for 1 second.
+            # Rate limit: after every 10 pages, pause for 1 second.
             if pages_processed % 10 == 0:
                 time.sleep(1)
     except Exception as e:
@@ -83,9 +91,11 @@ def seed_movies():
         connection.close()
         print("Movies seeding completed.")
 
+
 def seed_genres():
     """
     Seed the genres table by querying the TMDb API.
+    Uses executemany to batch insert genres.
     """
     connection = get_db_connection()
     if connection is None:
@@ -103,15 +113,18 @@ def seed_genres():
         print("Seeding genres data from API...")
         data = get_all_genres()
         genres = data.get("genres", [])
+        batch_rows = []
+        insert_query = """
+            INSERT INTO genres (id, name)
+            VALUES (%s, %s)
+            ON DUPLICATE KEY UPDATE name = VALUES(name)
+        """
         for genre in genres:
-            insert_query = """
-                INSERT INTO genres (id, name)
-                VALUES (%s, %s)
-                ON DUPLICATE KEY UPDATE name = VALUES(name)
-            """
             values = (genre.get("id"), genre.get("name"))
-            cursor.execute(insert_query, values)
-        connection.commit()
+            batch_rows.append(values)
+        if batch_rows:
+            cursor.executemany(insert_query, batch_rows)
+            connection.commit()
         print(f"Seeded {len(genres)} genres.")
     except Exception as e:
         print("Error seeding genres:", e)
@@ -119,11 +132,12 @@ def seed_genres():
         cursor.close()
         connection.close()
 
+
 def seed_cast_and_crew():
     """
     For each movie in the DB, query the TMDb API for cast and crew,
-    and insert the data into movie_cast and movie_crew tables.
-    Rate limit: 10 requests per second.
+    deduplicate entries, and insert the data into the persons and movie_credits tables.
+    Uses batch inserts and rate limits to 10 requests per second.
     """
     connection = get_db_connection()
     if connection is None:
@@ -132,60 +146,109 @@ def seed_cast_and_crew():
 
     try:
         cursor = connection.cursor(dictionary=True)
+        # Get all movies from the database.
         cursor.execute("SELECT id, movieId FROM movies")
         movies = cursor.fetchall()
         total_movies = len(movies)
         print(f"Seeding cast and crew for {total_movies} movies...")
+
+        # Prepare SQL for inserting persons.
+        persons_insert_query = """
+            INSERT IGNORE INTO persons 
+            (id, name, original_name, gender, popularity, profile_path, known_for_department)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+        # Prepare SQL for inserting into movie_credits.
+        credits_insert_query = """
+            INSERT IGNORE INTO movie_credits 
+            (credit_id, movie_id, person_id, type, cast_order, character_name, department, job)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """
+
+        persons_batch = []
+        credits_batch = []
+        seen_persons = set()   # To avoid duplicate person insertions.
+        seen_credits = set()   # To avoid duplicate credit insertions.
+
         requests_count = 0
         for index, movie in enumerate(movies, start=1):
             movie_db_id = movie["id"]
             movie_api_id = movie["movieId"]
             try:
                 credits = get_movie_credits(movie_api_id)
-                # Seed cast records.
-                cast_list = credits.get("cast", [])
-                for cast in cast_list:
-                    insert_query = """
-                        INSERT IGNORE INTO movie_cast 
-                        (credit_id, movie_id, person_id, cast_order, character_name, name, original_name, gender, popularity, profile_path)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """
-                    values = (
-                        cast.get("credit_id"),
+                # Process cast records.
+                for cast in credits.get("cast", []):
+                    credit_id = cast.get("credit_id")
+                    person_id = cast.get("id")
+                    if credit_id in seen_credits:
+                        continue
+                    seen_credits.add(credit_id)
+                    # Insert person if not already inserted.
+                    if person_id not in seen_persons:
+                        # Some cast entries might not have a 'known_for_department' field;
+                        # if missing, default to "Acting".
+                        known_for = cast.get(
+                            "known_for_department") or "Acting"
+                        persons_batch.append((
+                            person_id,
+                            cast.get("name"),
+                            cast.get("original_name"),
+                            cast.get("gender"),
+                            cast.get("popularity"),
+                            cast.get("profile_path"),
+                            known_for
+                        ))
+                        seen_persons.add(person_id)
+                    # Prepare credit record for a cast entry.
+                    credits_batch.append((
+                        credit_id,
                         movie_db_id,
-                        cast.get("id"),
+                        person_id,
+                        "cast",
                         cast.get("order"),
                         cast.get("character"),
-                        cast.get("name"),
-                        cast.get("original_name"),
-                        cast.get("gender"),
-                        cast.get("popularity"),
-                        cast.get("profile_path")
-                    )
-                    cursor.execute(insert_query, values)
-                # Seed crew records.
-                crew_list = credits.get("crew", [])
-                for crew in crew_list:
-                    insert_query = """
-                        INSERT IGNORE INTO movie_crew 
-                        (credit_id, movie_id, person_id, department, job, name, original_name, gender, popularity, profile_path)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """
-                    values = (
-                        crew.get("credit_id"),
+                        None,  # department (NULL for cast)
+                        None   # job (NULL for cast)
+                    ))
+                # Process crew records.
+                for crew in credits.get("crew", []):
+                    credit_id = crew.get("credit_id")
+                    person_id = crew.get("id")
+                    if credit_id in seen_credits:
+                        continue
+                    seen_credits.add(credit_id)
+                    if person_id not in seen_persons:
+                        persons_batch.append((
+                            person_id,
+                            crew.get("name"),
+                            crew.get("original_name"),
+                            crew.get("gender"),
+                            crew.get("popularity"),
+                            crew.get("profile_path"),
+                            crew.get("known_for_department")
+                        ))
+                        seen_persons.add(person_id)
+                    # Prepare credit record for a crew entry.
+                    credits_batch.append((
+                        credit_id,
                         movie_db_id,
-                        crew.get("id"),
+                        person_id,
+                        "crew",
+                        None,  # cast_order (NULL for crew)
+                        None,  # character (NULL for crew)
                         crew.get("department"),
-                        crew.get("job"),
-                        crew.get("name"),
-                        crew.get("original_name"),
-                        crew.get("gender"),
-                        crew.get("popularity"),
-                        crew.get("profile_path")
-                    )
-                    cursor.execute(insert_query, values)
+                        crew.get("job")
+                    ))
+                # Batch insert persons and credits for this movie.
+                if persons_batch:
+                    cursor.executemany(persons_insert_query, persons_batch)
+                    persons_batch = []  # Clear after insertion.
+                if credits_batch:
+                    cursor.executemany(credits_insert_query, credits_batch)
+                    credits_batch = []  # Clear after insertion.
                 connection.commit()
-                print(f"Seeded cast and crew for movie {movie_api_id} ({index}/{total_movies}).")
+                print(f"Seeded cast and crew for movie {
+                      movie_api_id} ({index}/{total_movies}).")
             except Exception as e:
                 print(f"Error seeding cast/crew for movie {movie_api_id}: {e}")
             requests_count += 1
@@ -197,11 +260,12 @@ def seed_cast_and_crew():
         cursor.close()
         connection.close()
 
+
 def seed_images():
     """
     For each movie in the DB, query the TMDb API for images and insert them
     into the images table.
-    Rate limit: 10 requests per second.
+    Uses batch inserts and rate limits to 10 requests per second.
     """
     connection = get_db_connection()
     if connection is None:
@@ -214,23 +278,25 @@ def seed_images():
         movies = cursor.fetchall()
         total_movies = len(movies)
         print(f"Seeding images for {total_movies} movies...")
+        image_insert_query = """
+            INSERT IGNORE INTO images 
+            (movie_id, type, file_path, aspect_ratio, height, width, vote_average, vote_count, iso_639_1)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
+        image_batch = []
         requests_count = 0
         for index, movie in enumerate(movies, start=1):
             movie_db_id = movie["id"]
             movie_api_id = movie["movieId"]
             try:
                 images_data = get_movie_images(movie_api_id)
-                # For each image type: backdrops, logos, posters.
+                # Process each image type: backdrops, logos, posters.
                 for image_type in ['backdrops', 'logos', 'posters']:
                     for image in images_data.get(image_type, []):
-                        insert_query = """
-                            INSERT IGNORE INTO images 
-                            (movie_id, type, file_path, aspect_ratio, height, width, vote_average, vote_count, iso_639_1)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        """
-                        # Normalize the type value (remove trailing 's' if present)
-                        type_value = image_type[:-1] if image_type.endswith('s') else image_type
-                        values = (
+                        # Normalize type: remove trailing 's' if present.
+                        type_value = image_type[:-
+                                                1] if image_type.endswith('s') else image_type
+                        image_values = (
                             movie_db_id,
                             type_value,
                             image.get("file_path"),
@@ -241,9 +307,13 @@ def seed_images():
                             image.get("vote_count"),
                             image.get("iso_639_1")
                         )
-                        cursor.execute(insert_query, values)
-                connection.commit()
-                print(f"Seeded images for movie {movie_api_id} ({index}/{total_movies}).")
+                        image_batch.append(image_values)
+                if image_batch:
+                    cursor.executemany(image_insert_query, image_batch)
+                    connection.commit()
+                    image_batch = []
+                print(f"Seeded images for movie {
+                      movie_api_id} ({index}/{total_movies}).")
             except Exception as e:
                 print(f"Error seeding images for movie {movie_api_id}: {e}")
             requests_count += 1
@@ -255,8 +325,11 @@ def seed_images():
         cursor.close()
         connection.close()
 
+
 if __name__ == '__main__':
     print("Starting DB seeding process...")
+    initialize_database()
+    create_tables()
     seed_movies()
     seed_genres()
     seed_cast_and_crew()

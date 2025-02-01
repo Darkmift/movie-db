@@ -54,6 +54,8 @@ def initialize_database():
 def create_tables():
     """
     Create the necessary tables in the movie_db database if they don't exist.
+    This version uses a 'persons' table and a unified 'movie_credits' table to
+    capture both cast and crew credit lines.
     """
     connection = get_db_connection()
     if connection is None:
@@ -63,7 +65,7 @@ def create_tables():
     try:
         cursor = connection.cursor()
 
-        # Create movies table with an additional unique movieId column.
+        # Movies table
         print("Creating 'movies' table...")
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS movies (
@@ -85,7 +87,7 @@ def create_tables():
         """)
         print("'movies' table created or already exists.")
 
-        # Create genres table.
+        # Genres table
         print("Creating 'genres' table...")
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS genres (
@@ -95,7 +97,7 @@ def create_tables():
         """)
         print("'genres' table created or already exists.")
 
-        # Create join table for movies and genres.
+        # Join table for movies and genres.
         print("Creating 'movie_genres' table...")
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS movie_genres (
@@ -108,7 +110,7 @@ def create_tables():
         """)
         print("'movie_genres' table created or already exists.")
 
-        # Create images table.
+        # Images table
         print("Creating 'images' table...")
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS images (
@@ -127,45 +129,38 @@ def create_tables():
         """)
         print("'images' table created or already exists.")
 
-        # Create movie_cast table.
-        # Use the API's unique credit_id as the primary key.
-        print("Creating 'movie_cast' table...")
+        # Persons table: stores unique information about individuals.
+        print("Creating 'persons' table...")
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS movie_cast (
-                credit_id VARCHAR(50) PRIMARY KEY,
-                movie_id INT,
-                person_id INT,
-                cast_order INT,
-                character_name VARCHAR(255),  -- Renamed from 'character'
+            CREATE TABLE IF NOT EXISTS persons (
+                id INT PRIMARY KEY, -- API's person ID.
                 name VARCHAR(255),
                 original_name VARCHAR(255),
                 gender INT,
                 popularity DECIMAL(8,3),
                 profile_path VARCHAR(255),
-                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+                known_for_department VARCHAR(100)
             );
         """)
-        print("'movie_cast' table created or already exists.")
+        print("'persons' table created or already exists.")
 
-        # Create movie_crew table.
-        # Similarly, use the API's unique credit_id as the primary key.
-        print("Creating 'movie_crew' table...")
+        # Movie credits table: unifies cast and crew credit lines.
+        print("Creating 'movie_credits' table...")
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS movie_crew (
-                credit_id VARCHAR(50) PRIMARY KEY,
+            CREATE TABLE IF NOT EXISTS movie_credits (
+                credit_id VARCHAR(50) PRIMARY KEY,  -- Unique credit line ID from the API.
                 movie_id INT,
                 person_id INT,
-                department VARCHAR(100),
-                job VARCHAR(100),
-                name VARCHAR(255),
-                original_name VARCHAR(255),
-                gender INT,
-                popularity DECIMAL(8,3),
-                profile_path VARCHAR(255),
-                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+                type ENUM('cast', 'crew') NOT NULL,
+                cast_order INT,           -- For cast records; NULL for crew.
+                character_name VARCHAR(255),   -- Renamed from 'character'; for cast records; NULL for crew.
+                department VARCHAR(100),  -- For crew records; NULL for cast.
+                job VARCHAR(100),         -- For crew records; NULL for cast.
+                FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
+                FOREIGN KEY (person_id) REFERENCES persons(id) ON DELETE CASCADE
             );
         """)
-        print("'movie_crew' table created or already exists.")
+        print("'movie_credits' table created or already exists.")
 
         connection.commit()
         print("All tables have been created successfully.")
@@ -177,10 +172,11 @@ def create_tables():
             connection.close()
             print("Database connection closed.")
 
+
 def execute_query(query, params=None, commit=False, fetchone=False, fetchall=False):
     """
     A helper function to execute a given SQL query using the DB connection.
-    
+
     :param query: SQL query to be executed.
     :param params: Optional parameters to use with the query.
     :param commit: If True, commit the transaction.
@@ -212,6 +208,7 @@ def execute_query(query, params=None, commit=False, fetchone=False, fetchall=Fal
         cursor.close()
         connection.close()
         print("Database connection closed.")
+
 
 # For quick testing when running this module directly
 if __name__ == '__main__':
