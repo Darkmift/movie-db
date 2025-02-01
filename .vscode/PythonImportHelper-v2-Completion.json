@@ -220,6 +220,22 @@
         "documentation": {}
     },
     {
+        "label": "initialize_database",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
+        "label": "create_tables",
+        "importPath": "db",
+        "description": "db",
+        "isExtraImport": true,
+        "detail": "db",
+        "documentation": {}
+    },
+    {
         "label": "get_all_users",
         "importPath": "services.user_service",
         "description": "services.user_service",
@@ -609,7 +625,7 @@
         "kind": 2,
         "importPath": "services.db",
         "description": "services.db",
-        "peekOfCode": "def create_tables():\n    \"\"\"\n    Create the necessary tables in the movie_db database if they don't exist.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Cannot create tables because the connection failed.\")\n        return\n    try:\n        cursor = connection.cursor()",
+        "peekOfCode": "def create_tables():\n    \"\"\"\n    Create the necessary tables in the movie_db database if they don't exist.\n    This version uses a 'persons' table and a unified 'movie_credits' table to\n    capture both cast and crew credit lines.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Cannot create tables because the connection failed.\")\n        return",
         "detail": "services.db",
         "documentation": {}
     },
@@ -708,7 +724,7 @@
         "kind": 2,
         "importPath": "services.seed",
         "description": "services.seed",
-        "peekOfCode": "def seed_movies():\n    \"\"\"\n    Seed the movies table by fetching 250 pages of popular movies\n    from the TMDb API if the table is empty.\n    Rate limit: 10 pages per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding movies.\")\n        return",
+        "peekOfCode": "def seed_movies():\n    \"\"\"\n    Seed the movies table by fetching 250 pages of popular movies\n    from the TMDb API if the table is empty.\n    Rate limit: 10 pages per second.\n    Uses executemany to batch insert movie rows.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding movies.\")",
         "detail": "services.seed",
         "documentation": {}
     },
@@ -717,7 +733,7 @@
         "kind": 2,
         "importPath": "services.seed",
         "description": "services.seed",
-        "peekOfCode": "def seed_genres():\n    \"\"\"\n    Seed the genres table by querying the TMDb API.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding genres.\")\n        return\n    try:\n        cursor = connection.cursor()",
+        "peekOfCode": "def seed_genres():\n    \"\"\"\n    Seed the genres table by querying the TMDb API.\n    Uses executemany to batch insert genres.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding genres.\")\n        return\n    try:",
         "detail": "services.seed",
         "documentation": {}
     },
@@ -726,7 +742,7 @@
         "kind": 2,
         "importPath": "services.seed",
         "description": "services.seed",
-        "peekOfCode": "def seed_cast_and_crew():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for cast and crew,\n    and insert the data into movie_cast and movie_crew tables.\n    Rate limit: 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding cast and crew.\")\n        return",
+        "peekOfCode": "def seed_cast_and_crew():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for cast and crew,\n    deduplicate entries, and insert the data into the persons and movie_credits tables.\n    Uses batch inserts and rate limits to 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding cast and crew.\")\n        return",
         "detail": "services.seed",
         "documentation": {}
     },
@@ -735,7 +751,7 @@
         "kind": 2,
         "importPath": "services.seed",
         "description": "services.seed",
-        "peekOfCode": "def seed_images():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for images and insert them\n    into the images table.\n    Rate limit: 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding images.\")\n        return",
+        "peekOfCode": "def seed_images():\n    \"\"\"\n    For each movie in the DB, query the TMDb API for images and insert them\n    into the images table.\n    Uses batch inserts and rate limits to 10 requests per second.\n    \"\"\"\n    connection = get_db_connection()\n    if connection is None:\n        print(\"Failed to connect to DB for seeding images.\")\n        return",
         "detail": "services.seed",
         "documentation": {}
     },
