@@ -1,7 +1,7 @@
 import os
 from flask import Flask, jsonify
 from dotenv import load_dotenv
-from services.db import get_db_connection, initialize_database
+from services.db import create_tables, get_db_connection, initialize_database
 # import all methods from the movie_api.py file
 import services.movie_api as movie_api
 
@@ -18,9 +18,11 @@ try:
 except Exception as e:
     print("Error while connecting to the database:", e)
 
+
 @app.route('/')
 def home():
     return "Hello, Flask with dotenv!"
+
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
@@ -46,13 +48,15 @@ def movies_by_page(page):
 # Use a guard to ensure initialization runs only once.
 
 
-@app.before_request
-def before_request_func():
-    if not hasattr(app, '_initialized'):
+if not hasattr(app, '_initialized'):
+    try:
+        # Initialize the database if it hasn't been initialized yet
         print("Initializing the database...")
         initialize_database()
+        create_tables()
         app._initialized = True
-
+    except Exception as e:
+        print("Error while initializing the database:", e)
 
 if __name__ == '__main__':
     print("Starting Flask app...", flush=True)
