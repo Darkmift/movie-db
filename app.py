@@ -1,13 +1,22 @@
 import os
 from flask import Flask, jsonify
 from dotenv import load_dotenv
+from services.db import get_db_connection, initialize_database
 # import all methods from the movie_api.py file
 import services.movie_api as movie_api
+
+
 # Load environment variables from the .env file
 load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+try:
+    # Initialize the database if it doesn't exist
+    initialize_database()
+except Exception as e:
+    print("Error while connecting to the database:", e)
 
 @app.route('/')
 def home():
@@ -22,6 +31,8 @@ def get_data():
     return jsonify(sample_data)
 
 # Testing methods from the movie_api.py file
+
+
 @app.route('/api/movies/page/<int:page>', methods=['GET'])
 def movies_by_page(page):
     try:
@@ -32,6 +43,17 @@ def movies_by_page(page):
         # Return a JSON error message in case of failure
         return jsonify({"error": str(e)}), 500
 
+# Use a guard to ensure initialization runs only once.
+
+
+@app.before_request
+def before_request_func():
+    if not hasattr(app, '_initialized'):
+        print("Initializing the database...")
+        initialize_database()
+        app._initialized = True
+
+
 if __name__ == '__main__':
-    # Use environment variables for host and port if needed
+    print("Starting Flask app...", flush=True)
     app.run(debug=True)
