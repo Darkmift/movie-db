@@ -1,0 +1,1082 @@
+
+--- Query #1: Most popular movie & top 10 actors ---
+Movie: Sonic the Hedgehog 3, Actor: Keanu Reeves, Actor Popularity: 116.653
+Movie: Sonic the Hedgehog 3, Actor: Jim Carrey, Actor Popularity: 89.192
+Movie: Sonic the Hedgehog 3, Actor: James Marsden, Actor Popularity: 75.849
+Movie: Sonic the Hedgehog 3, Actor: Idris Elba, Actor Popularity: 57.510
+Movie: Sonic the Hedgehog 3, Actor: Krysten Ritter, Actor Popularity: 57.140
+Movie: Sonic the Hedgehog 3, Actor: Ben Schwartz, Actor Popularity: 33.895
+Movie: Sonic the Hedgehog 3, Actor: Tika Sumpter, Actor Popularity: 26.139
+Movie: Sonic the Hedgehog 3, Actor: Shemar Moore, Actor Popularity: 25.597
+Movie: Sonic the Hedgehog 3, Actor: Lee Majdoub, Actor Popularity: 23.134
+Movie: Sonic the Hedgehog 3, Actor: Jorma Taccone, Actor Popularity: 19.448
+
+--- Query #2: Genre counts & top movie in each genre ---
+Genre: Action, Total Movies: 52, Most Popular: Sonic the Hedgehog 3
+Genre: Drama, Total Movies: 31, Most Popular: Babygirl
+Genre: Thriller, Total Movies: 30, Most Popular: Kraven the Hunter
+Genre: Adventure, Total Movies: 25, Most Popular: Kraven the Hunter
+Genre: Comedy, Total Movies: 23, Most Popular: Sonic the Hedgehog 3
+Genre: Science Fiction, Total Movies: 17, Most Popular: Sonic the Hedgehog 3
+Genre: Animation, Total Movies: 16, Most Popular: Moana 2
+Genre: Horror, Total Movies: 15, Most Popular: Nosferatu
+Genre: Family, Total Movies: 13, Most Popular: Sonic the Hedgehog 3
+Genre: Romance, Total Movies: 13, Most Popular: Wicked
+Genre: Crime, Total Movies: 11, Most Popular: Alarum
+Genre: Fantasy, Total Movies: 10, Most Popular: Nosferatu
+Genre: Mystery, Total Movies: 3, Most Popular: Smile 2
+Genre: War, Total Movies: 3, Most Popular: Number 24
+Genre: Documentary, Total Movies: 2, Most Popular: Le clitoris
+Genre: History, Total Movies: 1, Most Popular: Number 24
+Genre: TV Movie, Total Movies: 1, Most Popular: Star Trek: Section 31
+
+--- Query #3: Full-text search in movie title (example: 'באטמן') ---
+Error in query_3: 1191 (HY000): Can't find FULLTEXT index matching the column list
+
+--- Query #4: Group persons by role & gender ---
+שחקנים גברים: 1674
+Other (No Job / Gender=0 / Type=cast): 961
+שחקניות נשים: 845
+Other (Stunts / Gender=2 / Type=crew): 386
+Other (Stunts / Gender=0 / Type=crew): 244
+Other (Executive Producer / Gender=2 / Type=crew): 202
+Other (Producer / Gender=2 / Type=crew): 188
+Other (Stunts / Gender=1 / Type=crew): 114
+Other (Set Dresser / Gender=0 / Type=crew): 101
+Other (Special Effects Technician / Gender=0 / Type=crew): 99
+במאים גברים: 86
+Other (Executive Producer / Gender=0 / Type=crew): 78
+Other (Visual Effects Producer / Gender=0 / Type=crew): 74
+Other (Art Direction / Gender=0 / Type=crew): 72
+Other (Visual Effects Supervisor / Gender=2 / Type=crew): 72
+Other (Casting / Gender=1 / Type=crew): 69
+Other (VFX Artist / Gender=0 / Type=crew): 69
+Other (Makeup Artist / Gender=0 / Type=crew): 68
+Other (Visual Effects Coordinator / Gender=0 / Type=crew): 65
+Other (Original Music Composer / Gender=2 / Type=crew): 64
+Other (Thanks / Gender=2 / Type=crew): 64
+Other (Director of Photography / Gender=2 / Type=crew): 63
+Other (Electrician / Gender=0 / Type=crew): 62
+Other (Editor / Gender=2 / Type=crew): 61
+Other (Grip / Gender=0 / Type=crew): 60
+Other (Screenplay / Gender=2 / Type=crew): 59
+Other (Assistant Art Director / Gender=0 / Type=crew): 58
+Other (Animation / Gender=0 / Type=crew): 58
+Other (Sound Re-Recording Mixer / Gender=2 / Type=crew): 57
+Other (Writer / Gender=2 / Type=crew): 55
+Other (Production Assistant / Gender=0 / Type=crew): 55
+Other (Stunt Double / Gender=2 / Type=crew): 55
+Other (Hairstylist / Gender=0 / Type=crew): 54
+Other (Stunt Coordinator / Gender=2 / Type=crew): 53
+Other (Stunt Double / Gender=0 / Type=crew): 53
+Other (Producer / Gender=0 / Type=crew): 52
+Other (Visual Effects Supervisor / Gender=0 / Type=crew): 50
+Other (Lighting Technician / Gender=0 / Type=crew): 48
+Other (Producer / Gender=1 / Type=crew): 47
+Other (Costumer / Gender=0 / Type=crew): 47
+Other (Sound Designer / Gender=2 / Type=crew): 45
+Other (Second Assistant Director / Gender=0 / Type=crew): 45
+Other (Storyboard Artist / Gender=0 / Type=crew): 45
+Other (Production Design / Gender=2 / Type=crew): 44
+Other (Art Direction / Gender=2 / Type=crew): 43
+Other (Set Designer / Gender=0 / Type=crew): 43
+Other (Characters / Gender=2 / Type=crew): 43
+Other (Stunt Double / Gender=1 / Type=crew): 43
+Other (Prosthetic Makeup Artist / Gender=0 / Type=crew): 43
+Other (Executive Producer / Gender=1 / Type=crew): 42
+Other (Supervising Sound Editor / Gender=2 / Type=crew): 40
+Other (Rigging Grip / Gender=0 / Type=crew): 40
+Other (Boom Operator / Gender=0 / Type=crew): 39
+Other (Digital Compositor / Gender=0 / Type=crew): 39
+Other (Gaffer / Gender=0 / Type=crew): 38
+Other (Location Manager / Gender=0 / Type=crew): 37
+Other (Storyboard Artist / Gender=2 / Type=crew): 37
+Other (Story / Gender=2 / Type=crew): 36
+Other (Production Coordinator / Gender=0 / Type=crew): 35
+Other (Location Assistant / Gender=0 / Type=crew): 34
+Other (Stunt Driver / Gender=2 / Type=crew): 34
+Other (Animation / Gender=2 / Type=crew): 33
+Other (Costume Design / Gender=1 / Type=crew): 32
+Other (Concept Artist / Gender=0 / Type=crew): 32
+Other (Set Costumer / Gender=0 / Type=crew): 31
+Other (Co-Producer / Gender=2 / Type=crew): 31
+Other (Assistant Editor / Gender=0 / Type=crew): 31
+Other (Third Assistant Director / Gender=0 / Type=crew): 31
+Other (First Assistant Editor / Gender=0 / Type=crew): 30
+Other (Set Decoration / Gender=0 / Type=crew): 29
+Other (Sound Effects Editor / Gender=0 / Type=crew): 29
+Other (Thanks / Gender=0 / Type=crew): 29
+Other (Key Animation / Gender=0 / Type=crew): 29
+Other (Key Grip / Gender=0 / Type=crew): 28
+Other (First Assistant Director / Gender=0 / Type=crew): 28
+Other (Assistant Location Manager / Gender=0 / Type=crew): 28
+Other (First Assistant Director / Gender=2 / Type=crew): 27
+Other (Stunt Driver / Gender=0 / Type=crew): 27
+Other (Sound Designer / Gender=0 / Type=crew): 26
+Other (Co-Producer / Gender=0 / Type=crew): 26
+Other (Animation Supervisor / Gender=0 / Type=crew): 26
+Other (Dialogue Editor / Gender=0 / Type=crew): 26
+Other (Video Assist Operator / Gender=0 / Type=crew): 26
+Other (ADR Mixer / Gender=0 / Type=crew): 26
+Other (Sound Effects Editor / Gender=2 / Type=crew): 25
+Other (Sound Re-Recording Mixer / Gender=0 / Type=crew): 25
+Other (Property Master / Gender=0 / Type=crew): 25
+Other (Digital Imaging Technician / Gender=0 / Type=crew): 25
+Other (Production Manager / Gender=0 / Type=crew): 25
+Other (Costume Supervisor / Gender=0 / Type=crew): 24
+Other (Editor / Gender=0 / Type=crew): 24
+Other (Second Unit Director / Gender=2 / Type=crew): 24
+Other (Camera Operator / Gender=0 / Type=crew): 23
+Other (Key Hair Stylist / Gender=0 / Type=crew): 23
+Other (Utility Stunts / Gender=2 / Type=crew): 23
+Other (Props / Gender=0 / Type=crew): 23
+Other (ADR Mixer / Gender=2 / Type=crew): 23
+Other (Second Assistant Camera / Gender=0 / Type=crew): 23
+Other (First Assistant Camera / Gender=0 / Type=crew): 22
+Other (Foley Artist / Gender=0 / Type=crew): 22
+Other (Compositing Supervisor / Gender=0 / Type=crew): 22
+Other (Makeup Artist / Gender=1 / Type=crew): 22
+Other (Set Designer / Gender=2 / Type=crew): 21
+Other (Still Photographer / Gender=0 / Type=crew): 21
+Other (Editor / Gender=1 / Type=crew): 21
+Other (Assistant Property Master / Gender=0 / Type=crew): 21
+Other (Line Producer / Gender=0 / Type=crew): 21
+Other (Set Decoration / Gender=1 / Type=crew): 21
+Other (Musician / Gender=0 / Type=crew): 21
+Other (Set Dresser / Gender=2 / Type=crew): 21
+Other (Foley Artist / Gender=2 / Type=crew): 21
+Other (Original Music Composer / Gender=0 / Type=crew): 21
+Other (CG Supervisor / Gender=0 / Type=crew): 20
+Other (Assistant Costume Designer / Gender=0 / Type=crew): 20
+Other (Script Supervisor / Gender=0 / Type=crew): 20
+Other (Special Effects / Gender=0 / Type=crew): 20
+Other (Prosthetic Makeup Artist / Gender=1 / Type=crew): 20
+Other (Fight Choreographer / Gender=2 / Type=crew): 20
+Other (Casting / Gender=2 / Type=crew): 19
+Other (Costume Design / Gender=0 / Type=crew): 19
+Other (Supervising Art Director / Gender=2 / Type=crew): 19
+Other (Special Effects Supervisor / Gender=2 / Type=crew): 19
+Other (Art Direction / Gender=1 / Type=crew): 19
+Other (Casting / Gender=0 / Type=crew): 19
+Other (Casting Assistant / Gender=0 / Type=crew): 19
+Other (Steadicam Operator / Gender=0 / Type=crew): 19
+Other (Production Accountant / Gender=0 / Type=crew): 19
+Other (Production Supervisor / Gender=0 / Type=crew): 18
+Other (Art Department Coordinator / Gender=0 / Type=crew): 18
+Other (Dialogue Editor / Gender=2 / Type=crew): 18
+Other (Key Makeup Artist / Gender=0 / Type=crew): 18
+Other (Set Decoration Buyer / Gender=0 / Type=crew): 18
+Other (Casting Associate / Gender=0 / Type=crew): 18
+Other (Senior Animator / Gender=0 / Type=crew): 18
+Other (Animation Supervisor / Gender=2 / Type=crew): 18
+Other (Camera Operator / Gender=2 / Type=crew): 17
+Other (Script Supervisor / Gender=1 / Type=crew): 17
+Other (Hairstylist / Gender=1 / Type=crew): 17
+Other (Visual Effects Editor / Gender=0 / Type=crew): 17
+Other (Makeup Artist / Gender=2 / Type=crew): 17
+Other (Graphic Designer / Gender=0 / Type=crew): 17
+Other (Rotoscoping Artist / Gender=0 / Type=crew): 17
+Other (Production Design / Gender=0 / Type=crew): 17
+Other (Construction Coordinator / Gender=0 / Type=crew): 16
+Other (Orchestrator / Gender=2 / Type=crew): 16
+Other (Carpenter / Gender=0 / Type=crew): 16
+Other (Set Production Assistant / Gender=0 / Type=crew): 16
+Other (Painter / Gender=0 / Type=crew): 16
+Other (Colorist / Gender=0 / Type=crew): 16
+Other (Second Second Assistant Director / Gender=0 / Type=crew): 16
+Other (ADR Recordist / Gender=0 / Type=crew): 16
+Other (Writer / Gender=0 / Type=crew): 16
+Other (Visual Effects Producer / Gender=1 / Type=crew): 16
+Other (Assistant Set Decoration / Gender=0 / Type=crew): 16
+Other (Special Effects Makeup Artist / Gender=0 / Type=crew): 16
+Other (Key Animation / Gender=2 / Type=crew): 16
+Other (Assistant Art Director / Gender=2 / Type=crew): 15
+Other (Associate Producer / Gender=0 / Type=crew): 15
+Other (Visual Effects / Gender=0 / Type=crew): 15
+Other (Hair Department Head / Gender=0 / Type=crew): 15
+Other (Sound Mixer / Gender=0 / Type=crew): 15
+Other (Associate Producer / Gender=1 / Type=crew): 15
+Other (Dolly Grip / Gender=0 / Type=crew): 15
+Other (First Assistant "A" Camera / Gender=0 / Type=crew): 15
+Other (Lighting Technician / Gender=2 / Type=crew): 15
+Other (Visual Effects Producer / Gender=2 / Type=crew): 15
+Other (Foley Mixer / Gender=2 / Type=crew): 15
+Other (Utility Stunts / Gender=0 / Type=crew): 15
+Other (Story Artist / Gender=0 / Type=crew): 15
+Other (Key Animation / Gender=1 / Type=crew): 15
+Other (Screenplay / Gender=1 / Type=crew): 14
+במאיות נשים: 14
+Other (Music Editor / Gender=0 / Type=crew): 14
+Other (Associate Producer / Gender=2 / Type=crew): 14
+Other (Supervising Sound Editor / Gender=0 / Type=crew): 14
+Other (Stunt Coordinator / Gender=0 / Type=crew): 14
+Other (Drone Operator / Gender=0 / Type=crew): 14
+Other (Second Unit Director of Photography / Gender=2 / Type=crew): 14
+Other (Second Assistant Director / Gender=2 / Type=crew): 14
+Other (Special Effects Supervisor / Gender=0 / Type=crew): 14
+Other (Concept Artist / Gender=2 / Type=crew): 14
+Other (Special Effects Technician / Gender=2 / Type=crew): 14
+Other (Unit Production Manager / Gender=0 / Type=crew): 14
+Other (Scenic Artist / Gender=0 / Type=crew): 14
+Other (Best Boy Electric / Gender=0 / Type=crew): 14
+Other (Additional Music / Gender=2 / Type=crew): 14
+Other (Post Production Supervisor / Gender=0 / Type=crew): 13
+Other (Orchestrator / Gender=0 / Type=crew): 13
+Other (Still Photographer / Gender=2 / Type=crew): 13
+Other (Unit Production Manager / Gender=2 / Type=crew): 13
+Other (Draughtsman / Gender=0 / Type=crew): 13
+Other (Music Supervisor / Gender=2 / Type=crew): 13
+Other (VFX Editor / Gender=0 / Type=crew): 13
+Other (Foley Editor / Gender=0 / Type=crew): 13
+Other (Production Design / Gender=1 / Type=crew): 13
+Other (Production Sound Mixer / Gender=0 / Type=crew): 13
+Other (Makeup Department Head / Gender=0 / Type=crew): 13
+Other (Best Boy Grip / Gender=0 / Type=crew): 13
+Other (ADR Voice Casting / Gender=1 / Type=crew): 13
+Other (Foley Mixer / Gender=0 / Type=crew): 13
+Other (Production Secretary / Gender=0 / Type=crew): 13
+Other (Other / Gender=0 / Type=crew): 13
+Other ("A" Camera Operator / Gender=0 / Type=crew): 13
+Other (Visual Development / Gender=0 / Type=crew): 13
+Other (Assistant Grip / Gender=0 / Type=crew): 13
+Other (Set Decoration / Gender=2 / Type=crew): 12
+Other (Leadman / Gender=0 / Type=crew): 12
+Other (Set Designer / Gender=1 / Type=crew): 12
+Other (Sculptor / Gender=0 / Type=crew): 12
+Other (Transportation Captain / Gender=0 / Type=crew): 12
+Other (Special Effects Coordinator / Gender=0 / Type=crew): 12
+Other (Assistant Sound Editor / Gender=0 / Type=crew): 12
+Other (Property Master / Gender=2 / Type=crew): 12
+Other (Key Grip / Gender=2 / Type=crew): 12
+Other (Extras Casting / Gender=0 / Type=crew): 12
+Other (Steadicam Operator / Gender=2 / Type=crew): 12
+Other (Costume Assistant / Gender=0 / Type=crew): 12
+Other (Co-Producer / Gender=1 / Type=crew): 12
+Other (Rigging Gaffer / Gender=0 / Type=crew): 12
+Other (Additional Storyboarding / Gender=0 / Type=crew): 12
+Other (Screenplay / Gender=0 / Type=crew): 11
+Other (Makeup Department Head / Gender=1 / Type=crew): 11
+Other (Location Scout / Gender=0 / Type=crew): 11
+Other (Gaffer / Gender=2 / Type=crew): 11
+Other (Dolly Grip / Gender=2 / Type=crew): 11
+Other (Boom Operator / Gender=2 / Type=crew): 11
+Other (First Assistant "B" Camera / Gender=0 / Type=crew): 11
+Other (Casting Assistant / Gender=1 / Type=crew): 11
+Other (Assistant Accountant / Gender=0 / Type=crew): 11
+Other (Assistant Director / Gender=0 / Type=crew): 11
+Other (Camera Loader / Gender=0 / Type=crew): 11
+Other ("B" Camera Operator / Gender=0 / Type=crew): 11
+Other (Unit Manager / Gender=0 / Type=crew): 11
+Other (Songs / Gender=2 / Type=crew): 11
+Other (Visual Effects Compositor / Gender=0 / Type=crew): 11
+Other (Hairstylist / Gender=2 / Type=crew): 10
+Other (Music Editor / Gender=2 / Type=crew): 10
+Other (Casting Associate / Gender=1 / Type=crew): 10
+Other (Art Department Assistant / Gender=0 / Type=crew): 10
+Other (Grip / Gender=2 / Type=crew): 10
+Other (Unit Production Manager / Gender=1 / Type=crew): 10
+Other (Supervising Art Director / Gender=0 / Type=crew): 10
+Other (Key Costumer / Gender=0 / Type=crew): 10
+Other (Visual Effects Technical Director / Gender=0 / Type=crew): 10
+Other (Foley Editor / Gender=2 / Type=crew): 10
+Other (Senior Modeller / Gender=0 / Type=crew): 10
+Other (Novel / Gender=2 / Type=crew): 10
+Other (Sound Assistant / Gender=0 / Type=crew): 10
+Other (Digital Imaging Technician / Gender=2 / Type=crew): 10
+Other (Costume Design / Gender=2 / Type=crew): 10
+Other (Writer / Gender=1 / Type=crew): 10
+Other (Stunt Driver / Gender=1 / Type=crew): 10
+Other ("A" Camera Operator / Gender=2 / Type=crew): 10
+Other (VFX Supervisor / Gender=0 / Type=crew): 10
+Other (Vocals / Gender=0 / Type=crew): 10
+Other (Assistant Art Director / Gender=1 / Type=crew): 9
+Other (Costume Supervisor / Gender=1 / Type=crew): 9
+Other (Construction Foreman / Gender=0 / Type=crew): 9
+Other (Conceptual Illustrator / Gender=0 / Type=crew): 9
+Other (Post Production Supervisor / Gender=2 / Type=crew): 9
+Other (Costume Coordinator / Gender=0 / Type=crew): 9
+Other (3D Artist / Gender=0 / Type=crew): 9
+Other (Assistant Editor / Gender=2 / Type=crew): 9
+Other (Assistant Production Coordinator / Gender=0 / Type=crew): 9
+Other (Additional Music / Gender=0 / Type=crew): 9
+Other (Musician / Gender=2 / Type=crew): 9
+Other (Executive Visual Effects Producer / Gender=0 / Type=crew): 9
+Other (Visual Effects Production Assistant / Gender=0 / Type=crew): 9
+Other (Story / Gender=0 / Type=crew): 9
+Other (Director of Photography / Gender=0 / Type=crew): 9
+Other (Sound Mixer / Gender=2 / Type=crew): 9
+Other (Visual Effects / Gender=2 / Type=crew): 9
+Other (Presenter / Gender=2 / Type=crew): 9
+Other (Second Assistant "A" Camera / Gender=0 / Type=crew): 9
+Other (CG Supervisor / Gender=2 / Type=crew): 9
+Other (Online Editor / Gender=0 / Type=crew): 9
+Other (Sound / Gender=0 / Type=crew): 9
+Other (Music Supervisor / Gender=0 / Type=crew): 9
+Other (ADR & Dubbing / Gender=1 / Type=crew): 9
+Other (Dialect Coach / Gender=0 / Type=crew): 8
+Other (Greensman / Gender=0 / Type=crew): 8
+Other (Visual Effects Editor / Gender=2 / Type=crew): 8
+Other (Production Supervisor / Gender=2 / Type=crew): 8
+Other (Production Sound Mixer / Gender=2 / Type=crew): 8
+Other (Creature Technical Director / Gender=0 / Type=crew): 8
+Other (Stunt Coordinator / Gender=1 / Type=crew): 8
+Other (Assistant Camera / Gender=0 / Type=crew): 8
+Other (First Assistant Accountant / Gender=0 / Type=crew): 8
+Other (Second Assistant "A" Camera / Gender=2 / Type=crew): 8
+Other (Second Assistant "B" Camera / Gender=0 / Type=crew): 8
+Other (Executive Visual Effects Producer / Gender=1 / Type=crew): 8
+Other (Dailies Operator / Gender=0 / Type=crew): 8
+Other (Foley Artist / Gender=1 / Type=crew): 8
+Other (Other / Gender=2 / Type=crew): 8
+Other (Visual Effects Production Manager / Gender=0 / Type=crew): 8
+Other (Special Effects Makeup Artist / Gender=2 / Type=crew): 8
+Other (Location Manager / Gender=2 / Type=crew): 8
+Other (Focus Puller / Gender=0 / Type=crew): 8
+Other (Drone Pilot / Gender=0 / Type=crew): 8
+Other (Supervising Animator / Gender=0 / Type=crew): 8
+Other (Title Designer / Gender=2 / Type=crew): 8
+Other (Director / Gender=0 / Type=crew): 7
+Other (First Assistant Editor / Gender=2 / Type=crew): 7
+Other (Driver / Gender=0 / Type=crew): 7
+Other (Assistant Costume Designer / Gender=1 / Type=crew): 7
+Other (Production Coordinator / Gender=1 / Type=crew): 7
+Other (Scoring Mixer / Gender=0 / Type=crew): 7
+Other (Makeup Designer / Gender=0 / Type=crew): 7
+Other (Lighting Supervisor / Gender=0 / Type=crew): 7
+Other (Aerial Director of Photography / Gender=2 / Type=crew): 7
+Other (Ager/Dyer / Gender=0 / Type=crew): 7
+Other (Line Producer / Gender=2 / Type=crew): 7
+Other (On Set Dresser / Gender=0 / Type=crew): 7
+Other (Electrician / Gender=2 / Type=crew): 7
+Other (First Assistant "B" Camera / Gender=2 / Type=crew): 7
+Other (Key Rigging Grip / Gender=0 / Type=crew): 7
+Other (Production Assistant / Gender=2 / Type=crew): 7
+Other (Second Assistant Accountant / Gender=0 / Type=crew): 7
+Other (Second Second Assistant Director / Gender=2 / Type=crew): 7
+Other (Special Effects Assistant / Gender=0 / Type=crew): 7
+Other (Score Engineer / Gender=0 / Type=crew): 7
+Other (Post Production Coordinator / Gender=0 / Type=crew): 7
+Other (Effects Supervisor / Gender=0 / Type=crew): 7
+Other (Novel / Gender=1 / Type=crew): 7
+Other (Extras Casting Assistant / Gender=0 / Type=crew): 7
+Other (Music / Gender=2 / Type=crew): 7
+Other (Sound Editor / Gender=0 / Type=crew): 7
+Other (Key Makeup Artist / Gender=1 / Type=crew): 7
+Other (Additional Sound Re-Recording Mixer / Gender=2 / Type=crew): 7
+Other (Accountant / Gender=0 / Type=crew): 7
+Other (Stand In / Gender=0 / Type=crew): 7
+Other (Songs / Gender=1 / Type=crew): 7
+Other ("B" Camera Operator / Gender=2 / Type=crew): 7
+Other (Animation / Gender=1 / Type=crew): 7
+Other (ADR & Dubbing / Gender=2 / Type=crew): 7
+Other (Vocals / Gender=1 / Type=crew): 7
+Other (Art Department Coordinator / Gender=1 / Type=crew): 6
+Other (Transportation Coordinator / Gender=2 / Type=crew): 6
+Other (Transportation Coordinator / Gender=0 / Type=crew): 6
+Other (Chef / Gender=0 / Type=crew): 6
+Other (Third Assistant Director / Gender=2 / Type=crew): 6
+Other (Cinematography / Gender=0 / Type=crew): 6
+Other (Music / Gender=0 / Type=crew): 6
+Other (Sound Recordist / Gender=0 / Type=crew): 6
+Other (Key Hair Stylist / Gender=1 / Type=crew): 6
+Other (Set Costumer / Gender=2 / Type=crew): 6
+Other (Lead Animator / Gender=2 / Type=crew): 6
+Other (Set Decorating Coordinator / Gender=0 / Type=crew): 6
+Other (Best Boy Grip / Gender=2 / Type=crew): 6
+Other (Armorer / Gender=0 / Type=crew): 6
+Other (Title Designer / Gender=0 / Type=crew): 6
+Other (Utility Sound / Gender=0 / Type=crew): 6
+Other (Assistant Production Manager / Gender=0 / Type=crew): 6
+Other (Compositing Supervisor / Gender=2 / Type=crew): 6
+Other (Production Supervisor / Gender=1 / Type=crew): 6
+Other (Graphic Designer / Gender=2 / Type=crew): 6
+Other (Tailor / Gender=0 / Type=crew): 6
+Other (Thanks / Gender=1 / Type=crew): 6
+Other (Choreographer / Gender=2 / Type=crew): 6
+Other (Visual Effects Coordinator / Gender=1 / Type=crew): 6
+Other (Executive Visual Effects Producer / Gender=2 / Type=crew): 6
+Other (Camera Trainee / Gender=0 / Type=crew): 6
+Other (Standby Property Master / Gender=0 / Type=crew): 6
+Other (Story Artist / Gender=2 / Type=crew): 6
+Other (Additional Storyboarding / Gender=2 / Type=crew): 6
+Other (Health and Safety / Gender=0 / Type=crew): 6
+Other (Foley Recordist / Gender=0 / Type=crew): 6
+Other (Scenic Artist / Gender=2 / Type=crew): 5
+Other (Construction Coordinator / Gender=2 / Type=crew): 5
+Other (Still Photographer / Gender=1 / Type=crew): 5
+Other (Sculptor / Gender=2 / Type=crew): 5
+Other (Special Effects Coordinator / Gender=2 / Type=crew): 5
+Other (First Assistant Camera / Gender=2 / Type=crew): 5
+Other (Armorer / Gender=2 / Type=crew): 5
+Other (Post Production Supervisor / Gender=1 / Type=crew): 5
+Other (Set Medic / Gender=0 / Type=crew): 5
+Other (Music Supervisor / Gender=1 / Type=crew): 5
+Other (Conductor / Gender=2 / Type=crew): 5
+Other (Hair Designer / Gender=0 / Type=crew): 5
+Other (Prosthetic Makeup Artist / Gender=2 / Type=crew): 5
+Other (ADR Supervisor / Gender=1 / Type=crew): 5
+Other (Sound Effects Editor / Gender=1 / Type=crew): 5
+Other (Hair Department Head / Gender=1 / Type=crew): 5
+Other (Key Costumer / Gender=1 / Type=crew): 5
+Other (Set Costumer / Gender=1 / Type=crew): 5
+Other (3D Modeller / Gender=0 / Type=crew): 5
+Other (Set Painter / Gender=0 / Type=crew): 5
+Other (Camera Production Assistant / Gender=0 / Type=crew): 5
+Other (Post Production Assistant / Gender=0 / Type=crew): 5
+Other (Special Effects / Gender=2 / Type=crew): 5
+Other (Technical Advisor / Gender=0 / Type=crew): 5
+Other (Color Assistant / Gender=0 / Type=crew): 5
+Other (Compositor / Gender=0 / Type=crew): 5
+Other (Digital Compositor / Gender=2 / Type=crew): 5
+Other (Visual Effects Camera / Gender=0 / Type=crew): 5
+Other (Property Buyer / Gender=0 / Type=crew): 5
+Other (Music Arranger / Gender=2 / Type=crew): 5
+Other (Aerial Coordinator / Gender=2 / Type=crew): 5
+Other (Payroll Accountant / Gender=0 / Type=crew): 5
+Other (Second Assistant "C" Camera / Gender=0 / Type=crew): 5
+Other (Extras Casting / Gender=1 / Type=crew): 5
+Other (Key Makeup Artist / Gender=2 / Type=crew): 5
+Other (Construction Manager / Gender=0 / Type=crew): 5
+Other (Assistant Set Decoration / Gender=2 / Type=crew): 5
+Other (Sound Re-Recording Mixer / Gender=1 / Type=crew): 5
+Other (Original Music Composer / Gender=1 / Type=crew): 5
+Other (Other / Gender=1 / Type=crew): 5
+Other (Assistant Property Master / Gender=2 / Type=crew): 5
+Other (ADR Editor / Gender=2 / Type=crew): 5
+Other (Foley Supervisor / Gender=2 / Type=crew): 5
+Other (Wardrobe Supervisor / Gender=0 / Type=crew): 5
+Other (Story / Gender=1 / Type=crew): 5
+Other (Hair Designer / Gender=1 / Type=crew): 5
+Other (Fight Choreographer / Gender=0 / Type=crew): 5
+Other (Second Assistant Director / Gender=1 / Type=crew): 5
+Other (Location Manager / Gender=1 / Type=crew): 5
+Other (Character Designer / Gender=0 / Type=crew): 5
+Other (Assistant Makeup Artist / Gender=0 / Type=crew): 5
+Other ("C" Camera Operator / Gender=0 / Type=crew): 5
+Other (Makeup Designer / Gender=1 / Type=crew): 5
+Other (Costume Illustrator / Gender=0 / Type=crew): 5
+Other (Standby Carpenter / Gender=0 / Type=crew): 5
+Other (Supervising Carpenter / Gender=0 / Type=crew): 5
+Other (VFX Supervisor / Gender=2 / Type=crew): 5
+Other (Storyboard Assistant / Gender=0 / Type=crew): 5
+Other (Compositing Artist / Gender=0 / Type=crew): 5
+Other (Production Manager / Gender=2 / Type=crew): 4
+Other (Rigging Gaffer / Gender=2 / Type=crew): 4
+Other (Digital Producer / Gender=0 / Type=crew): 4
+Other (Standby Painter / Gender=0 / Type=crew): 4
+Other (Systems Administrators & Support / Gender=0 / Type=crew): 4
+Other (Transportation Co-Captain / Gender=0 / Type=crew): 4
+Other (Digital Intermediate / Gender=0 / Type=crew): 4
+Other (Sound Engineer / Gender=0 / Type=crew): 4
+Other (VFX Artist / Gender=2 / Type=crew): 4
+Other (Production Manager / Gender=1 / Type=crew): 4
+Other (Aerial Camera Technician / Gender=0 / Type=crew): 4
+Other (Casting Associate / Gender=2 / Type=crew): 4
+Other (Lead Animator / Gender=0 / Type=crew): 4
+Other (Pyrotechnician / Gender=0 / Type=crew): 4
+Other (ADR Editor / Gender=0 / Type=crew): 4
+Other (Construction Buyer / Gender=0 / Type=crew): 4
+Other (Additional Production Assistant / Gender=0 / Type=crew): 4
+Other (Additional Second Assistant Director / Gender=0 / Type=crew): 4
+Other (Costumer / Gender=1 / Type=crew): 4
+Other (Assistant Editor / Gender=1 / Type=crew): 4
+Other (First Assistant "A" Camera / Gender=2 / Type=crew): 4
+Other (Negative Cutter / Gender=0 / Type=crew): 4
+Other (Set Production Assistant / Gender=2 / Type=crew): 4
+Other (Musician / Gender=1 / Type=crew): 4
+Other (Data Wrangler / Gender=0 / Type=crew): 4
+Other (Matte Painter / Gender=0 / Type=crew): 4
+Other (Additional First Assistant Camera / Gender=0 / Type=crew): 4
+Other (Pilot / Gender=0 / Type=crew): 4
+Other (Supervising Dialogue Editor / Gender=2 / Type=crew): 4
+Other (Costume Designer / Gender=1 / Type=crew): 4
+Other (Second Unit Director / Gender=0 / Type=crew): 4
+Other (First Assistant "C" Camera / Gender=0 / Type=crew): 4
+Other (Second Assistant "B" Camera / Gender=2 / Type=crew): 4
+Other (Graphic Designer / Gender=1 / Type=crew): 4
+Other (Travel Coordinator / Gender=0 / Type=crew): 4
+Other (Original Film Writer / Gender=2 / Type=crew): 4
+Other (First Assistant Director / Gender=1 / Type=crew): 4
+Other (Assistant Production Design / Gender=0 / Type=crew): 4
+Other (Makeup Designer / Gender=2 / Type=crew): 4
+Other (Associate Editor / Gender=0 / Type=crew): 4
+Other (Script Supervisor / Gender=2 / Type=crew): 4
+Other (Executive Assistant / Gender=0 / Type=crew): 4
+Other (Stand In / Gender=2 / Type=crew): 4
+Other (Dialogue Editor / Gender=1 / Type=crew): 4
+Other (Assistant Sound Editor / Gender=2 / Type=crew): 4
+Other (Supervising Music Editor / Gender=0 / Type=crew): 4
+Other (2D Supervisor / Gender=0 / Type=crew): 4
+Other (Colorist / Gender=2 / Type=crew): 4
+Other (Casting Director / Gender=0 / Type=crew): 4
+Other (Script Consultant / Gender=0 / Type=crew): 4
+Other (No Job / Gender=3 / Type=cast): 4
+Other (Additional Grip / Gender=0 / Type=crew): 4
+Other (Set Dresser / Gender=1 / Type=crew): 4
+Other (Hair Supervisor / Gender=0 / Type=crew): 4
+Other (Drone Pilot / Gender=2 / Type=crew): 4
+Other (Music Producer / Gender=2 / Type=crew): 4
+Other (Lighting Programmer / Gender=0 / Type=crew): 4
+Other (Music Director / Gender=2 / Type=crew): 4
+Other (Visual Development / Gender=2 / Type=crew): 4
+Other (Choreographer / Gender=0 / Type=crew): 4
+Other (Visual Effects Art Director / Gender=0 / Type=crew): 4
+Other (Second Unit First Assistant Director / Gender=0 / Type=crew): 4
+Other (Second Unit First Assistant Director / Gender=2 / Type=crew): 4
+Other (Supervising Art Director / Gender=1 / Type=crew): 4
+Other (Makeup Supervisor / Gender=0 / Type=crew): 4
+Other (Supervising Sound Editor / Gender=1 / Type=crew): 4
+Other (Sound Designer / Gender=1 / Type=crew): 4
+Other (Sound Editor / Gender=2 / Type=crew): 4
+Other (Additional Second Assistant Camera / Gender=0 / Type=crew): 4
+Other ("C" Camera Operator / Gender=2 / Type=crew): 4
+Other (Vocals / Gender=2 / Type=crew): 4
+Other (Standby Art Director / Gender=0 / Type=crew): 4
+Other (Foley / Gender=2 / Type=crew): 3
+Other (First Assistant Sound Editor / Gender=0 / Type=crew): 3
+Other (Sequence Supervisor / Gender=0 / Type=crew): 3
+Other (Executive In Charge Of Production / Gender=2 / Type=crew): 3
+Other (Comic Book / Gender=2 / Type=crew): 3
+Other (Picture Car Coordinator / Gender=0 / Type=crew): 3
+Other (Propmaker / Gender=0 / Type=crew): 3
+Other (Unit Publicist / Gender=2 / Type=crew): 3
+Other (Rigging Grip / Gender=2 / Type=crew): 3
+Other (Additional Editing / Gender=0 / Type=crew): 3
+Other (Lead Painter / Gender=0 / Type=crew): 3
+Other (Digital Effects Supervisor / Gender=0 / Type=crew): 3
+Other (Lighting Artist / Gender=0 / Type=crew): 3
+Other (Creature Design / Gender=2 / Type=crew): 3
+Other (Visual Effects Art Director / Gender=2 / Type=crew): 3
+Other (Draughtsman / Gender=2 / Type=crew): 3
+Other (Drone Operator / Gender=2 / Type=crew): 3
+Other (Best Boy Electric / Gender=2 / Type=crew): 3
+Other (Epk Camera Operator / Gender=0 / Type=crew): 3
+Other (Assistant Costume Designer / Gender=2 / Type=crew): 3
+Other (Sound Recordist / Gender=2 / Type=crew): 3
+Other (Makeup Department Head / Gender=2 / Type=crew): 3
+Other (Techno Crane Operator / Gender=0 / Type=crew): 3
+Other (Craft Service / Gender=0 / Type=crew): 3
+Other (Dialect Coach / Gender=1 / Type=crew): 3
+Other (Music Coordinator / Gender=0 / Type=crew): 3
+Other (Coordinating Producer / Gender=0 / Type=crew): 3
+Other (Associate Editor / Gender=2 / Type=crew): 3
+Other (Catering / Gender=0 / Type=crew): 3
+Other (Pilot / Gender=2 / Type=crew): 3
+Other (Modeling / Gender=0 / Type=crew): 3
+Other (On Set Dresser / Gender=2 / Type=crew): 3
+Other (Production Assistant / Gender=1 / Type=crew): 3
+Other (Prop Maker / Gender=0 / Type=crew): 3
+Other (Security Coordinator / Gender=0 / Type=crew): 3
+Other (Set Production Assistant / Gender=1 / Type=crew): 3
+Other (Compositing Lead / Gender=0 / Type=crew): 3
+Other (Visual Effects Production Manager / Gender=1 / Type=crew): 3
+Other (Textile Artist / Gender=0 / Type=crew): 3
+Other (Libra Head Technician / Gender=0 / Type=crew): 3
+Other (Digital Intermediate Editor / Gender=0 / Type=crew): 3
+Other (Visual Effects Assistant Editor / Gender=0 / Type=crew): 3
+Other (Sound Effects / Gender=0 / Type=crew): 3
+Other (Contact Lens Technician / Gender=0 / Type=crew): 3
+Other (Wigmaker / Gender=0 / Type=crew): 3
+Other (Set Decoration Buyer / Gender=1 / Type=crew): 3
+Other (Main Title Designer / Gender=0 / Type=crew): 3
+Other (Foley Editor / Gender=1 / Type=crew): 3
+Other (Director of Photography / Gender=1 / Type=crew): 3
+Other (Construction Manager / Gender=2 / Type=crew): 3
+Other (Costume Supervisor / Gender=2 / Type=crew): 3
+Other (In Memory Of / Gender=2 / Type=crew): 3
+Other (Researcher / Gender=1 / Type=crew): 3
+Other (Assistant Location Manager / Gender=2 / Type=crew): 3
+Other (Costumer / Gender=2 / Type=crew): 3
+Other (Assistant Production Coordinator / Gender=1 / Type=crew): 3
+Other (Technical Advisor / Gender=2 / Type=crew): 3
+Other (Sound Mix Technician / Gender=2 / Type=crew): 3
+Other (ADR Mixer / Gender=1 / Type=crew): 3
+Other (Casting Director / Gender=1 / Type=crew): 3
+Other (Prosthetics Sculptor / Gender=0 / Type=crew): 3
+Other (Line Producer / Gender=1 / Type=crew): 3
+Other (Location Production Assistant / Gender=0 / Type=crew): 3
+Other (Novel / Gender=0 / Type=crew): 3
+Other (Foley Mixer / Gender=1 / Type=crew): 3
+Other (First Assistant Editor / Gender=1 / Type=crew): 3
+Other (Unit Publicist / Gender=1 / Type=crew): 3
+Other (First Assistant "C" Camera / Gender=2 / Type=crew): 3
+Other (Hair Department Head / Gender=2 / Type=crew): 3
+Other (Utility Stunts / Gender=1 / Type=crew): 3
+Other (Casting Director / Gender=2 / Type=crew): 3
+Other (Assistant Script / Gender=0 / Type=crew): 3
+Other (Assistant Director / Gender=2 / Type=crew): 3
+Other (Casting Coordinator / Gender=0 / Type=crew): 3
+Other (Data Management Technician / Gender=0 / Type=crew): 3
+Other (Swing / Gender=0 / Type=crew): 3
+Other (Concept Artist / Gender=1 / Type=crew): 3
+Other (Songs / Gender=0 / Type=crew): 3
+Other (Assistant Unit Manager / Gender=0 / Type=crew): 3
+Other (Costume Set Supervisor / Gender=0 / Type=crew): 3
+Other (Second Unit Director of Photography / Gender=0 / Type=crew): 3
+Other (Assistant Set Decoration / Gender=1 / Type=crew): 3
+Other (Post Production Coordinator / Gender=1 / Type=crew): 3
+Other (Executive Music Producer / Gender=2 / Type=crew): 3
+Other (Prosthetic Supervisor / Gender=0 / Type=crew): 3
+Other (Conceptual Design / Gender=2 / Type=crew): 3
+Other (Local Casting / Gender=1 / Type=crew): 3
+Other (Visual Effects Coordinator / Gender=2 / Type=crew): 3
+Other (Publicist / Gender=0 / Type=crew): 3
+Other (Head of Story / Gender=0 / Type=crew): 3
+Other (Additional Photography / Gender=0 / Type=crew): 3
+Other (Prosthetic Designer / Gender=2 / Type=crew): 3
+Other (Standby Rigger / Gender=0 / Type=crew): 3
+Other (Writers' Production / Gender=2 / Type=crew): 3
+Other (Sound Supervisor / Gender=0 / Type=crew): 3
+Other (Third Assistant "B" Camera / Gender=0 / Type=crew): 3
+Other (Helicopter Camera / Gender=2 / Type=crew): 2
+Other (Art Department Manager / Gender=0 / Type=crew): 2
+Other (Production Office Assistant / Gender=0 / Type=crew): 2
+Other (Additional Photography / Gender=2 / Type=crew): 2
+Other (Color Timer / Gender=2 / Type=crew): 2
+Other (Camera Technician / Gender=0 / Type=crew): 2
+Other (Helicopter Camera / Gender=0 / Type=crew): 2
+Other (Seamstress / Gender=1 / Type=crew): 2
+Other (Loader / Gender=2 / Type=crew): 2
+Other (Software Engineer / Gender=0 / Type=crew): 2
+Other (Video Assist Operator / Gender=2 / Type=crew): 2
+Other (Executive In Charge Of Post Production / Gender=0 / Type=crew): 2
+Other (Digital Compositors / Gender=0 / Type=crew): 2
+Other (Translator / Gender=1 / Type=crew): 2
+Other (Cinematography / Gender=1 / Type=crew): 2
+Other (Color Timer / Gender=0 / Type=crew): 2
+Other (ADR Voice Casting / Gender=2 / Type=crew): 2
+Other (Marine Coordinator / Gender=0 / Type=crew): 2
+Other (Script Coordinator / Gender=0 / Type=crew): 2
+Other (Animation Director / Gender=0 / Type=crew): 2
+Other (Matchmove Supervisor / Gender=2 / Type=crew): 2
+Other (Key Hair Stylist / Gender=2 / Type=crew): 2
+Other (Digital Intermediate Producer / Gender=0 / Type=crew): 2
+Other (Sound Mixer / Gender=1 / Type=crew): 2
+Other (Visual Effects Assistant Editor / Gender=2 / Type=crew): 2
+Other (Supervising Producer / Gender=1 / Type=crew): 2
+Other (Executive Producer's Assistant / Gender=0 / Type=crew): 2
+Other (Prosthetics / Gender=2 / Type=crew): 2
+Other (Modeling / Gender=2 / Type=crew): 2
+Other (Post Production Assistant / Gender=2 / Type=crew): 2
+Other (Conductor / Gender=0 / Type=crew): 2
+Other (Music Consultant / Gender=1 / Type=crew): 2
+Other (Matchmove Supervisor / Gender=0 / Type=crew): 2
+Other (Pre-Visualization Supervisor / Gender=0 / Type=crew): 2
+Other (VFX Director of Photography / Gender=0 / Type=crew): 2
+Other (Visual Effects Technical Director / Gender=2 / Type=crew): 2
+Other (Key Costumer / Gender=2 / Type=crew): 2
+Other (Apprentice Sound Editor / Gender=0 / Type=crew): 2
+Other (Visual Effects Compositor / Gender=2 / Type=crew): 2
+Other (Second Assistant Camera / Gender=2 / Type=crew): 2
+Other (Digital Colorist / Gender=0 / Type=crew): 2
+Other (Negative Cutter / Gender=2 / Type=crew): 2
+Other (Project Manager / Gender=0 / Type=crew): 2
+Other (Location Coordinator / Gender=0 / Type=crew): 2
+Other (Assistant Unit Manager / Gender=2 / Type=crew): 2
+Other (ADR Editor / Gender=1 / Type=crew): 2
+Other (Visual Effects Production Manager / Gender=2 / Type=crew): 2
+Other (Layout Supervisor / Gender=2 / Type=crew): 2
+Other (Compositing Lead / Gender=2 / Type=crew): 2
+Other (Creature Design / Gender=0 / Type=crew): 2
+Other (Additional Second Assistant Director / Gender=2 / Type=crew): 2
+Other (Actor's Assistant / Gender=2 / Type=crew): 2
+Other (Russian Arm Operator / Gender=0 / Type=crew): 2
+Other (Stereoscopic Editor / Gender=0 / Type=crew): 2
+Other (Conceptual Design / Gender=0 / Type=crew): 2
+Other (Set Decorating Coordinator / Gender=1 / Type=crew): 2
+Other (Technical Supervisor / Gender=0 / Type=crew): 2
+Other (Sound Mix Technician / Gender=0 / Type=crew): 2
+Other (Additional Editing / Gender=2 / Type=crew): 2
+Other (Second Assistant "C" Camera / Gender=2 / Type=crew): 2
+Other (Libra Head Technician / Gender=2 / Type=crew): 2
+Other (Chief Lighting Technician / Gender=2 / Type=crew): 2
+Other (Lighting Programmer / Gender=2 / Type=crew): 2
+Other (Painter / Gender=2 / Type=crew): 2
+Other (Makeup & Hair / Gender=0 / Type=crew): 2
+Other (Travel Coordinator / Gender=1 / Type=crew): 2
+Other (Production Secretary / Gender=1 / Type=crew): 2
+Other (Second Assistant Accountant / Gender=1 / Type=crew): 2
+Other (Producer's Assistant / Gender=0 / Type=crew): 2
+Other (Executive Producer's Assistant / Gender=2 / Type=crew): 2
+Other (Stand In / Gender=1 / Type=crew): 2
+Other (Assistant Sound Editor / Gender=1 / Type=crew): 2
+Other (Music Consultant / Gender=2 / Type=crew): 2
+Other (Additional Soundtrack / Gender=2 / Type=crew): 2
+Other (Music Arranger / Gender=0 / Type=crew): 2
+Other (Orchestrator / Gender=1 / Type=crew): 2
+Other (Cast Driver / Gender=0 / Type=crew): 2
+Other (Additional Director of Photography / Gender=2 / Type=crew): 2
+Other (Digital Compositor / Gender=1 / Type=crew): 2
+Other (Finishing Producer / Gender=0 / Type=crew): 2
+Other (Head of Production / Gender=2 / Type=crew): 2
+Other (Additional Casting / Gender=2 / Type=crew): 2
+Other (Casting Consultant / Gender=1 / Type=crew): 2
+Other (Research Assistant / Gender=0 / Type=crew): 2
+Other (Production Runner / Gender=0 / Type=crew): 2
+Other (Continuity / Gender=1 / Type=crew): 2
+Other (Production Artist / Gender=2 / Type=crew): 2
+Other (Wardrobe Assistant / Gender=0 / Type=crew): 2
+Other (Researcher / Gender=0 / Type=crew): 2
+Other (Production Coordinator / Gender=2 / Type=crew): 2
+Other (Props / Gender=1 / Type=crew): 2
+Other (Action Director / Gender=2 / Type=crew): 2
+Other (Standby Art Director / Gender=2 / Type=crew): 2
+Other (ADR Supervisor / Gender=0 / Type=crew): 2
+Other (Boom Operator / Gender=1 / Type=crew): 2
+Other (Lyricist / Gender=2 / Type=crew): 2
+Other (Loader / Gender=0 / Type=crew): 2
+Other (Dailies Manager / Gender=0 / Type=crew): 2
+Other (Book / Gender=2 / Type=crew): 2
+Other (Military Consultant / Gender=2 / Type=crew): 2
+Other (Standby Property Master / Gender=2 / Type=crew): 2
+Other (Visual Effects Supervisor / Gender=1 / Type=crew): 2
+Other (Head of Animation / Gender=2 / Type=crew): 2
+Other (Head of Story / Gender=2 / Type=crew): 2
+Other (Visual Development / Gender=1 / Type=crew): 2
+Other (Prosthetics / Gender=0 / Type=crew): 2
+Other (Stereoscopic Supervisor / Gender=0 / Type=crew): 2
+Other (3D Editor / Gender=0 / Type=crew): 2
+Other (Hair Supervisor / Gender=1 / Type=crew): 2
+Other (Story Artist / Gender=1 / Type=crew): 2
+Other (Mix Technician / Gender=0 / Type=crew): 2
+Other (Supervising Dialogue Editor / Gender=0 / Type=crew): 2
+Other (ADR Engineer / Gender=0 / Type=crew): 2
+Other (Sound Editor / Gender=1 / Type=crew): 2
+Other (Additional Writing / Gender=2 / Type=crew): 2
+Other (Continuity / Gender=0 / Type=crew): 2
+Other (Vocal Coach / Gender=0 / Type=crew): 2
+Other (Additional Lighting Technician / Gender=2 / Type=crew): 2
+Other (Key Hairdresser / Gender=0 / Type=crew): 2
+Other (Makeup Effects Designer / Gender=0 / Type=crew): 2
+Other (Music Editor / Gender=1 / Type=crew): 2
+Other (Transportation Captain / Gender=2 / Type=crew): 2
+Other (Supervising ADR Editor / Gender=2 / Type=crew): 2
+Other (Lighting Supervisor / Gender=2 / Type=crew): 2
+Other (Effects Supervisor / Gender=2 / Type=crew): 2
+Other (Sound Supervisor / Gender=2 / Type=crew): 2
+Other (Character Designer / Gender=2 / Type=crew): 2
+Other (Generator Operator / Gender=0 / Type=crew): 2
+Other (Clearances Coordinator / Gender=0 / Type=crew): 2
+Other (Editorial Production Assistant / Gender=0 / Type=crew): 2
+Other (Visual Effects Editor / Gender=1 / Type=crew): 2
+Other (Second Assistant Sound / Gender=0 / Type=crew): 2
+Other (Hairdresser / Gender=0 / Type=crew): 2
+Other (First Assistant Sound Editor / Gender=1 / Type=crew): 2
+Other (Second Second Assistant Director / Gender=1 / Type=crew): 2
+Other (Choreographer / Gender=1 / Type=crew): 2
+Other (Executive In Charge Of Production / Gender=1 / Type=crew): 2
+Other (Crowd Assistant Director / Gender=0 / Type=crew): 2
+Other (Extras Dresser / Gender=0 / Type=crew): 2
+Other (ADR Supervisor / Gender=2 / Type=crew): 2
+Other (ADR & Dubbing / Gender=0 / Type=crew): 2
+Other (Costume Designer / Gender=0 / Type=crew): 2
+Other (Additional Lighting Technician / Gender=0 / Type=crew): 2
+Other (Co-Executive Producer / Gender=2 / Type=crew): 2
+Other (Co-Executive Producer / Gender=0 / Type=crew): 2
+Other (Executive In Charge Of Production / Gender=0 / Type=crew): 2
+Other (Extras Casting Coordinator / Gender=0 / Type=crew): 2
+Other (Animation Supervisor / Gender=1 / Type=crew): 2
+Other (Color Designer / Gender=1 / Type=crew): 2
+Other (Associate Choreographer / Gender=0 / Type=crew): 2
+Other (Prosthetics Sculptor / Gender=1 / Type=crew): 2
+Other (Seamstress / Gender=0 / Type=crew): 2
+Other (Administration / Gender=0 / Type=crew): 2
+Other (Consulting Producer / Gender=1 / Type=crew): 2
+Other (Storyboard Artist / Gender=1 / Type=crew): 2
+Other (Supervising Sound Effects Editor / Gender=2 / Type=crew): 1
+Other (Camera Technician / Gender=2 / Type=crew): 1
+Other (Greensman / Gender=2 / Type=crew): 1
+Other (Foley / Gender=1 / Type=crew): 1
+Other (Compositors / Gender=0 / Type=crew): 1
+Other (Driver / Gender=2 / Type=crew): 1
+Other (Production Intern / Gender=2 / Type=crew): 1
+Other (Additional Camera / Gender=0 / Type=crew): 1
+Other (Set Dressing Artist / Gender=0 / Type=crew): 1
+Other (Wigmaker / Gender=1 / Type=crew): 1
+Other (Craft Service / Gender=2 / Type=crew): 1
+Other (Production Controller / Gender=0 / Type=crew): 1
+Other (Security / Gender=0 / Type=crew): 1
+Other (24 Frame Playback / Gender=0 / Type=crew): 1
+Other (3D Supervisor / Gender=2 / Type=crew): 1
+Other (Unit Manager / Gender=1 / Type=crew): 1
+Other (Cableman / Gender=0 / Type=crew): 1
+Other (Makeup Effects / Gender=0 / Type=crew): 1
+Other (Telecine Colorist / Gender=0 / Type=crew): 1
+Other (3D Animator / Gender=0 / Type=crew): 1
+Other (I/O Supervisor / Gender=0 / Type=crew): 1
+Other (Motion Capture Artist / Gender=0 / Type=crew): 1
+Other (Aerial Camera / Gender=2 / Type=crew): 1
+Other (Supervising ADR Editor / Gender=1 / Type=crew): 1
+Other (Draughtsman / Gender=1 / Type=crew): 1
+Other (Key Set Costumer / Gender=0 / Type=crew): 1
+Other (Digital Intermediate Colorist / Gender=2 / Type=crew): 1
+Other (Assistant Accountant / Gender=1 / Type=crew): 1
+Other (Negative Cutter / Gender=1 / Type=crew): 1
+Other (Production Controller / Gender=1 / Type=crew): 1
+Other (Score Engineer / Gender=2 / Type=crew): 1
+Other (Music Score Producer / Gender=0 / Type=crew): 1
+Other (Additional Sound Re-Recording Mixer / Gender=0 / Type=crew): 1
+Other (Digital Color Timer / Gender=0 / Type=crew): 1
+Other (Rotoscoping Artist / Gender=2 / Type=crew): 1
+Other (Construction Buyer / Gender=2 / Type=crew): 1
+Other (ADR Recordist / Gender=2 / Type=crew): 1
+Other (2D Artist / Gender=0 / Type=crew): 1
+Other (Camera Trainee / Gender=2 / Type=crew): 1
+Other (Focus Puller / Gender=2 / Type=crew): 1
+Other (CG Animator / Gender=0 / Type=crew): 1
+Other (Assistant Extras Casting / Gender=0 / Type=crew): 1
+Other (Digital Color Timer / Gender=2 / Type=crew): 1
+Other (Music Programmer / Gender=2 / Type=crew): 1
+Other (Digital Effects Producer / Gender=1 / Type=crew): 1
+Other (General Manager / Gender=0 / Type=crew): 1
+Other (Key Rigging Grip / Gender=2 / Type=crew): 1
+Other (Production Executive / Gender=0 / Type=crew): 1
+Other (Additional Dialogue / Gender=2 / Type=crew): 1
+Other (Assistant Makeup Artist / Gender=2 / Type=crew): 1
+Other (Contact Lens Painter / Gender=1 / Type=crew): 1
+Other (Assistant Property Master / Gender=1 / Type=crew): 1
+Other (Head Greensman / Gender=0 / Type=crew): 1
+Other (Additional Sound Re-Recordist / Gender=2 / Type=crew): 1
+Other (Second Assistant Camera / Gender=1 / Type=crew): 1
+Other (Pipeline Technical Director / Gender=0 / Type=crew): 1
+Other (Conceptual Illustrator / Gender=2 / Type=crew): 1
+Other (Production Executive / Gender=2 / Type=crew): 1
+Other (Post-Production Manager / Gender=2 / Type=crew): 1
+Other (2D Supervisor / Gender=2 / Type=crew): 1
+Other (Sound Director / Gender=2 / Type=crew): 1
+Other (Drone Cinematographer / Gender=0 / Type=crew): 1
+Other (Generator Operator / Gender=2 / Type=crew): 1
+Other (Dailies Technician / Gender=0 / Type=crew): 1
+Other (Construction Foreman / Gender=2 / Type=crew): 1
+Other (Dialect Coach / Gender=2 / Type=crew): 1
+Other (Production Accountant / Gender=2 / Type=crew): 1
+Other (Dolby Consultant / Gender=2 / Type=crew): 1
+Other (Co-Writer / Gender=2 / Type=crew): 1
+Other (Camera Car / Gender=2 / Type=crew): 1
+Other (Co-Director / Gender=2 / Type=crew): 1
+Other (Music Score Producer / Gender=2 / Type=crew): 1
+Other (Controller / Gender=0 / Type=crew): 1
+Other (Second Assistant "B" Camera / Gender=1 / Type=crew): 1
+Other (Utility Sound / Gender=1 / Type=crew): 1
+Other (Utility Sound / Gender=2 / Type=crew): 1
+Other (Assistant Chief Lighting Technician / Gender=0 / Type=crew): 1
+Other (First Company Grip / Gender=0 / Type=crew): 1
+Other (Second Company Grip / Gender=0 / Type=crew): 1
+Other (Location Scout / Gender=1 / Type=crew): 1
+Other (Assistant Location Manager / Gender=1 / Type=crew): 1
+Other (Ager/Dyer / Gender=1 / Type=crew): 1
+Other (Tailor / Gender=2 / Type=crew): 1
+Other (Production Secretary / Gender=2 / Type=crew): 1
+Other (Background Casting Director / Gender=1 / Type=crew): 1
+Other (Accountant / Gender=1 / Type=crew): 1
+Other (Pre-Visualization Supervisor / Gender=2 / Type=crew): 1
+Other (Executive Producer's Assistant / Gender=1 / Type=crew): 1
+Other (Actor's Assistant / Gender=1 / Type=crew): 1
+Other (Sound Re-Recording Assistant / Gender=2 / Type=crew): 1
+Other (Sound Re-Recording Assistant / Gender=0 / Type=crew): 1
+Other (Sound Engineer / Gender=2 / Type=crew): 1
+Other (Sound Post Production Coordinator / Gender=1 / Type=crew): 1
+Other (Mixing Engineer / Gender=2 / Type=crew): 1
+Other (Music Consultant / Gender=0 / Type=crew): 1
+Other (Additional Soundtrack / Gender=0 / Type=crew): 1
+Other (Scoring Mixer / Gender=2 / Type=crew): 1
+Other (Studio Teacher / Gender=1 / Type=crew): 1
+Other (Finishing Producer / Gender=1 / Type=crew): 1
+Other (Additional Colorist / Gender=0 / Type=crew): 1
+Other (Accountant / Gender=2 / Type=crew): 1
+Other (Additional Gaffer / Gender=2 / Type=crew): 1
+Other (Additional Editor / Gender=1 / Type=crew): 1
+Other (Script Consultant / Gender=1 / Type=crew): 1
+Other (Intern / Gender=0 / Type=crew): 1
+Other (Legal Services / Gender=0 / Type=crew): 1
+Other (Assistant Production Manager / Gender=1 / Type=crew): 1
+Other (Assistant Camera / Gender=2 / Type=crew): 1
+Other (Rigging Supervisor / Gender=0 / Type=crew): 1
+Other (Production Illustrator / Gender=2 / Type=crew): 1
+Other (Supervising Music Editor / Gender=2 / Type=crew): 1
+Other (Unit Publicist / Gender=0 / Type=crew): 1
+Other (Production Accountant / Gender=1 / Type=crew): 1
+Other (Administrative Assistant / Gender=0 / Type=crew): 1
+Other (Publicist / Gender=2 / Type=crew): 1
+Other (Camera Intern / Gender=0 / Type=crew): 1
+Other (Camera Operator / Gender=1 / Type=crew): 1
+Other (Third Assistant Camera / Gender=0 / Type=crew): 1
+Other (Associate Editor / Gender=1 / Type=crew): 1
+Other (Additional Script Supervisor / Gender=0 / Type=crew): 1
+Other (VFX Production Coordinator / Gender=2 / Type=crew): 1
+Other (Location Scout / Gender=2 / Type=crew): 1
+Other (Co-Director / Gender=1 / Type=crew): 1
+Other (Additional Editor / Gender=2 / Type=crew): 1
+Other (Security / Gender=2 / Type=crew): 1
+Other (Assistant Director / Gender=1 / Type=crew): 1
+Other (Assistant Music Supervisor / Gender=0 / Type=crew): 1
+Other (Dailies Operator / Gender=2 / Type=crew): 1
+Other (Set Dressing Buyer / Gender=0 / Type=crew): 1
+Other (Charge Scenic Artist / Gender=0 / Type=crew): 1
+Other (Additional Grip / Gender=2 / Type=crew): 1
+Other (Controller / Gender=1 / Type=crew): 1
+Other (Head of Story / Gender=1 / Type=crew): 1
+Other (Post-Production Manager / Gender=0 / Type=crew): 1
+Other (Sound / Gender=2 / Type=crew): 1
+Other (Development Manager / Gender=2 / Type=crew): 1
+Other (Characters / Gender=1 / Type=crew): 1
+Other (Underwater Director of Photography / Gender=0 / Type=crew): 1
+Other (Best Boy Electrician / Gender=0 / Type=crew): 1
+Other (Second Assistant "A" Camera / Gender=1 / Type=crew): 1
+Other (Swing / Gender=2 / Type=crew): 1
+Other (Dailies Manager / Gender=2 / Type=crew): 1
+Other (Camera Car / Gender=0 / Type=crew): 1
+Other (Idea / Gender=0 / Type=crew): 1
+Other (Lyricist / Gender=0 / Type=crew): 1
+Other (Payroll Accountant / Gender=1 / Type=crew): 1
+Other (Martial Arts Choreographer / Gender=0 / Type=crew): 1
+Other (Story Supervisor / Gender=2 / Type=crew): 1
+Other (Location Coordinator / Gender=2 / Type=crew): 1
+Other (Head of Layout / Gender=2 / Type=crew): 1
+Other (Lead Character Designer / Gender=0 / Type=crew): 1
+Other (Costume Assistant / Gender=2 / Type=crew): 1
+Other (Makeup Effects / Gender=1 / Type=crew): 1
+Other (Casting Coordinator / Gender=2 / Type=crew): 1
+Other (3D Artist / Gender=2 / Type=crew): 1
+Other (Carpenter / Gender=2 / Type=crew): 1
+Other (First Assistant Camera / Gender=1 / Type=crew): 1
+Other (Mixing Engineer / Gender=0 / Type=crew): 1
+Other (3D Modeller / Gender=2 / Type=crew): 1
+Other (3D Modeller / Gender=1 / Type=crew): 1
+Other (Dialogue Coach / Gender=0 / Type=crew): 1
+Other (Daily Wardrobe / Gender=0 / Type=crew): 1
+Other (Production Consultant / Gender=0 / Type=crew): 1
+Other (Cinematography / Gender=2 / Type=crew): 1
+Other (Makeup Effects Designer / Gender=2 / Type=crew): 1
+Other (Assistant Hairstylist / Gender=0 / Type=crew): 1
+Other (Supervising Dialogue Editor / Gender=1 / Type=crew): 1
+Other (Additional Hairstylist / Gender=0 / Type=crew): 1
+Other (Set Buyer / Gender=2 / Type=crew): 1
+Other (Assistant Dialogue Editor / Gender=0 / Type=crew): 1
+Other (Sound Effects / Gender=2 / Type=crew): 1
+Other (Visual Effects Production Assistant / Gender=1 / Type=crew): 1
+Other (Modeling / Gender=1 / Type=crew): 1
+Other (Layout Supervisor / Gender=0 / Type=crew): 1
+Other (Clearances Coordinator / Gender=1 / Type=crew): 1
+Other (Data Wrangler / Gender=2 / Type=crew): 1
+Other (Special Effects Makeup Artist / Gender=1 / Type=crew): 1
+Other (Special Effects Key Makeup Artist / Gender=0 / Type=crew): 1
+Other (Martial Arts Choreographer / Gender=2 / Type=crew): 1
+Other (On Set Props / Gender=0 / Type=crew): 1
+Other (Second Assistant "C" Camera / Gender=1 / Type=crew): 1
+Other (Local Casting / Gender=2 / Type=crew): 1
+Other (Marine Coordinator / Gender=2 / Type=crew): 1
+Other (Picture Car Coordinator / Gender=2 / Type=crew): 1
+Other (Assistant Chief Lighting Technician / Gender=2 / Type=crew): 1
+Other (Key Grip / Gender=1 / Type=crew): 1
+Other (Standby Painter / Gender=2 / Type=crew): 1
+Other (Leadman / Gender=2 / Type=crew): 1
+Other (In Memory Of / Gender=0 / Type=crew): 1
+Other (Sound Supervisor / Gender=1 / Type=crew): 1
+Other (Makeup Effects / Gender=2 / Type=crew): 1
+Other (Runner Art Department / Gender=0 / Type=crew): 1
+Other (Vehicles Wrangler / Gender=0 / Type=crew): 1
+Other (Property Buyer / Gender=1 / Type=crew): 1
+Other (Standby Painter / Gender=1 / Type=crew): 1
+Other (Prosthetic Designer / Gender=0 / Type=crew): 1
+Other (Art Department Assistant / Gender=2 / Type=crew): 1
+Other (Additional Visual Effects / Gender=0 / Type=crew): 1
+Other (Petty Cash Buyer / Gender=0 / Type=crew): 1
+Other (Makeup Supervisor / Gender=1 / Type=crew): 1
+Other (Hairdresser / Gender=2 / Type=crew): 1
+Other (BTS Photographer / Gender=0 / Type=crew): 1
+Other (Construction Coordinator / Gender=1 / Type=crew): 1
+Other (Construction Buyer / Gender=1 / Type=crew): 1
+Other (Story Manager / Gender=0 / Type=crew): 1
+Other (Thanks / Gender=3 / Type=crew): 1
+Other (Foley Recordist / Gender=2 / Type=crew): 1
+Other (Wardrobe Coordinator / Gender=1 / Type=crew): 1
+Other (Second Assistant Art Director / Gender=0 / Type=crew): 1
+Other (Assistant Decorator / Gender=0 / Type=crew): 1
+Other (Head of Animation / Gender=0 / Type=crew): 1
+Other (Additional Storyboarding / Gender=1 / Type=crew): 1
+Other (Set Supervisor / Gender=1 / Type=crew): 1
+Other (Lighting Supervisor / Gender=1 / Type=crew): 1
+Other (Story Manager / Gender=1 / Type=crew): 1
+Other (Editorial Manager / Gender=2 / Type=crew): 1
+Other (Animation Manager / Gender=1 / Type=crew): 1
+Other (Post Production Producer / Gender=1 / Type=crew): 1
+Other (Writers' Production / Gender=0 / Type=crew): 1
+Other (Animal Wrangler / Gender=0 / Type=crew): 1
+Other (Assistant Grip / Gender=2 / Type=crew): 1
+Other (Tailor / Gender=1 / Type=crew): 1
+Other (Extras Makeup Artist / Gender=0 / Type=crew): 1
+Other (Location Assistant / Gender=2 / Type=crew): 1
+Other (Senior Visual Effects Supervisor / Gender=0 / Type=crew): 1
+Other (Foley Supervisor / Gender=0 / Type=crew): 1
+Other (Pyrotechnic Supervisor / Gender=2 / Type=crew): 1
+Other (Main Title Designer / Gender=2 / Type=crew): 1
+Other (First Assistant Sound Editor / Gender=2 / Type=crew): 1
+Other (Casting Assistant / Gender=2 / Type=crew): 1
+Other (Production Director / Gender=0 / Type=crew): 1
+Other (Storyboard / Gender=0 / Type=crew): 1
+Other (Production Director / Gender=2 / Type=crew): 1
+Other (In Memory Of / Gender=1 / Type=crew): 1
+Other (Key Production Assistant / Gender=0 / Type=crew): 1
+Other (Props / Gender=2 / Type=crew): 1
+Other (Script Editor / Gender=1 / Type=crew): 1
+Other (Producer's Assistant / Gender=2 / Type=crew): 1
+Other (Original Series Creator / Gender=2 / Type=crew): 1
+Other (Delegated Producer / Gender=1 / Type=crew): 1
+Other (Delegated Producer / Gender=0 / Type=crew): 1
+Other (Scenic Artist / Gender=1 / Type=crew): 1
+Other (Art Department Assistant / Gender=1 / Type=crew): 1
+Other (3D Supervisor / Gender=0 / Type=crew): 1
+Other (ADR Voice Casting / Gender=0 / Type=crew): 1
+Other (Musical / Gender=1 / Type=crew): 1
+Other (Musical / Gender=2 / Type=crew): 1
+Other (Online Editor / Gender=2 / Type=crew): 1
+Other (Senior Colorist / Gender=2 / Type=crew): 1
+Other (Additional Colorist / Gender=2 / Type=crew): 1
+Other (Additional Casting / Gender=1 / Type=crew): 1
+Other (Special Effects Technician / Gender=1 / Type=crew): 1
+Other (Chief Lighting Technician / Gender=0 / Type=crew): 1
+Other (Key Construction Grip / Gender=0 / Type=crew): 1
+Other (Finance / Gender=0 / Type=crew): 1
+Other (Production Designer / Gender=0 / Type=crew): 1
+Other (Makeup & Hair / Gender=1 / Type=crew): 1
+Other (Script / Gender=0 / Type=crew): 1
+Other (Dresser / Gender=0 / Type=crew): 1
+Other (Hair Designer / Gender=2 / Type=crew): 1
+Other (Supervising Producer / Gender=0 / Type=crew): 1
+Other (Assistant Set Dresser / Gender=0 / Type=crew): 1
+Other (Modelling Supervisor / Gender=0 / Type=crew): 1
+Other (Special Effects Key Makeup Artist / Gender=2 / Type=crew): 1
+Other (Supervising Animator / Gender=2 / Type=crew): 1
+Other (Principal Costumer / Gender=0 / Type=crew): 1
+Other (Prop Designer / Gender=2 / Type=crew): 1
+Other (Color Designer / Gender=2 / Type=crew): 1
+Other (VFX Artist / Gender=1 / Type=crew): 1
+Other (Extras Casting Coordinator / Gender=2 / Type=crew): 1
+Other (Associate Choreographer / Gender=1 / Type=crew): 1
+Other ("C" Camera Operator / Gender=1 / Type=crew): 1
+Other (Comic Book / Gender=0 / Type=crew): 1
+Other (Characters / Gender=0 / Type=crew): 1
+Other (Apprentice Sound Editor / Gender=2 / Type=crew): 1
+Other (General Manager / Gender=2 / Type=crew): 1
+Other (Executive In Charge Of Post Production / Gender=1 / Type=crew): 1
+Other (Weapons Master / Gender=0 / Type=crew): 1
+Other (Vocal Coach / Gender=1 / Type=crew): 1
+Other (Key Production Assistant / Gender=1 / Type=crew): 1
+Other (Adaptation / Gender=2 / Type=crew): 1
+Other (Presenter / Gender=1 / Type=crew): 1
+Other (Administrative Assistant / Gender=2 / Type=crew): 1
+Other (Post Production Producer / Gender=0 / Type=crew): 1
+Other (Lead Set Dresser / Gender=0 / Type=crew): 1
+Other (Makeup & Hair Assistant / Gender=0 / Type=crew): 1
+Other (Best Boy Lighting Technician / Gender=0 / Type=crew): 1
+Other (Supervising Producer / Gender=2 / Type=crew): 1
+Other (Lighting Design / Gender=0 / Type=crew): 1
+Other (Script Coordinator / Gender=2 / Type=crew): 1
+Other (Loop Group Coordinator / Gender=2 / Type=crew): 1
+Other (Camera Trainee / Gender=1 / Type=crew): 1
+Other (Special Effects Supervisor / Gender=1 / Type=crew): 1
+Other (Editorial Production Assistant / Gender=2 / Type=crew): 1
+Other (Aerial Coordinator / Gender=0 / Type=crew): 1
+Other (Digital Supervisor / Gender=0 / Type=crew): 1
+Other (Production Sound Mixer / Gender=1 / Type=crew): 1
