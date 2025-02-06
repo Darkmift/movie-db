@@ -169,6 +169,14 @@ def query_3_seed_cast_and_crew():
 
     cursor = connection.cursor(dictionary=True)
     try:
+
+        cursor.execute("SELECT COUNT(*) AS count FROM persons")
+        count_result = cursor.fetchone()
+        if count_result and count_result["count"] > 0:
+            print(f"'persons' table already contains {
+                  count_result['count']} records. Skipping cast/crew seeding.")
+            return
+
         cursor.execute("SELECT id, movieId FROM movies")
         movie_rows = cursor.fetchall()
         total_movies = len(movie_rows)
@@ -297,6 +305,14 @@ def query_4_seed_images():
 
     cursor = connection.cursor(dictionary=True)
     try:
+        # 1) Check if 'images' table already has records
+        cursor.execute("SELECT COUNT(*) AS count FROM images")
+        img_count = cursor.fetchone()["count"]
+        if img_count > 0:
+            print(f"'images' table already contains {
+                  img_count} records. Skipping images seeding.")
+            return
+
         cursor.execute("SELECT id, movieId FROM movies")
         movie_rows = cursor.fetchall()
         total_movies = len(movie_rows)
@@ -323,8 +339,8 @@ def query_4_seed_images():
                     for img in images_data.get(image_type, []):
                         # remove trailing 's' to get singular type
                         normalized_type = (image_type[:-1]
-                                            if image_type.endswith('s')
-                                            else image_type)
+                                           if image_type.endswith('s')
+                                           else image_type)
                         batch_values.append((
                             db_movie_id,
                             normalized_type,
@@ -415,7 +431,8 @@ def main():
     top_5 = query_5_example_report()
     print("\nTop 5 Most Popular Movies in DB:")
     for row in top_5:
-        print(f" - {row['title']} (popularity: {row['popularity']}, vote_count: {row['vote_count']})")
+        print(f" - {row['title']} (popularity: {row['popularity']
+                                                }, vote_count: {row['vote_count']})")
 
     print("All queries finished.")
 
