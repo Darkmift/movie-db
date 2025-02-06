@@ -51,11 +51,27 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "mysql.connector",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "mysql.connector",
         "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
         "detail": "mysql.connector",
         "documentation": {}
     },
@@ -114,6 +130,14 @@
         "description": "api_data_retrieve",
         "isExtraImport": true,
         "detail": "api_data_retrieve",
+        "documentation": {}
+    },
+    {
+        "label": "redirect_stdout",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "isExtraImport": true,
+        "detail": "contextlib",
         "documentation": {}
     },
     {
@@ -216,11 +240,20 @@
         "documentation": {}
     },
     {
+        "label": "query_1_seed_movies_1",
+        "kind": 2,
+        "importPath": "src.queries_db_script",
+        "description": "src.queries_db_script",
+        "peekOfCode": "def query_1_seed_movies_1():\n    \"\"\"\n    Inserts popular movies into the 'movies' table by fetching pages\n    from the TMDb API. Demonstrates a 'seeding' query function.\n    \"\"\"\n    connection = get_db_connection()\n    if not connection:\n        print(\"Failed to connect to DB for seeding movies.\")\n        return\n    cursor = connection.cursor()",
+        "detail": "src.queries_db_script",
+        "documentation": {}
+    },
+    {
         "label": "query_1_seed_movies",
         "kind": 2,
         "importPath": "src.queries_db_script",
         "description": "src.queries_db_script",
-        "peekOfCode": "def query_1_seed_movies():\n    \"\"\"\n    Inserts popular movies into the 'movies' table by fetching pages\n    from the TMDb API. Demonstrates a 'seeding' query function.\n    \"\"\"\n    connection = get_db_connection()\n    if not connection:\n        print(\"Failed to connect to DB for seeding movies.\")\n        return\n    cursor = connection.cursor()",
+        "peekOfCode": "def query_1_seed_movies():\n    \"\"\"\n    Inserts popular movies into the 'movies' table by fetching pages\n    from the TMDb API. Then also populates 'movie_genres' using TMDb's\n    genre_ids for each inserted movie.\n    \"\"\"\n    connection = get_db_connection()\n    if not connection:\n        print(\"Failed to connect to DB for seeding movies.\")\n        return",
         "detail": "src.queries_db_script",
         "documentation": {}
     },
@@ -265,8 +298,71 @@
         "kind": 2,
         "importPath": "src.queries_db_script",
         "description": "src.queries_db_script",
-        "peekOfCode": "def main():\n    \"\"\"\n    Demonstrates calling each query (i.e., each 'seeding' routine)\n    in sequence, plus an example read-only query.\n    \"\"\"\n    print(\"Starting DB seeding / queries...\")\n    # 1) Seed the 'movies' table\n    query_1_seed_movies()\n    # 2) Seed the 'genres' table\n    query_2_seed_genres()",
+        "peekOfCode": "def main():\n    \"\"\"\n    Demonstrates calling each query (i.e., each 'seeding' routine)\n    in sequence, plus an example read-only query.\n    \"\"\"\n    print(\"Starting DB seeding / queries...\")\n    # 1) Seed the 'genres' table\n    query_2_seed_genres()\n    # 2) Seed the 'movies' table\n    query_1_seed_movies()",
         "detail": "src.queries_db_script",
+        "documentation": {}
+    },
+    {
+        "label": "get_db_connection",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def get_db_connection():\n    \"\"\"\n    Returns a MySQL database connection using env variables:\n    MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE.\n    \"\"\"\n    try:\n        conn = mysql.connector.connect(\n            host=os.getenv(\"MYSQL_HOST\"),\n            user=os.getenv(\"MYSQL_USER\"),\n            password=os.getenv(\"MYSQL_PASSWORD\"),",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "query_1_most_popular_movie_with_top_actors",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def query_1_most_popular_movie_with_top_actors():\n    \"\"\"\n    1) Find the most popular movie.\n    2) Return up to 10 most popular actors in that movie, along with actor details.\n    Returns a list of dictionaries with keys:\n      - movie_title\n      - actor_name\n      - actor_popularity\n    \"\"\"\n    conn = get_db_connection()",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "query_2_genre_movie_counts_and_top_movie",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def query_2_genre_movie_counts_and_top_movie():\n    \"\"\"\n    Returns, for each genre:\n      1) Genre name\n      2) Number of movies of that genre\n      3) The title of the most popular movie in that genre\n    Example columns in the returned dictionaries:\n      - genre_name\n      - movie_count\n      - most_popular_movie",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "query_3_fulltext_search_in_title",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def query_3_fulltext_search_in_title(substring):\n    \"\"\"\n    Full-text search in the 'movies.title' column.\n    For best substring matching, we can use a Boolean mode with an asterisk:\n      e.g. substring + '*'\n    Then order by popularity desc, limit 10.\n    Returns a list of dicts with:\n      - id\n      - title\n      - popularity",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "query_4_group_roles_by_gender",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def query_4_group_roles_by_gender():\n    \"\"\"\n    Returns aggregated counts of persons by role (cast vs crew),\n    gender, and specific job (e.g., Director).\n    The CASE expression translates them into Hebrew category names.\n    Example returned columns:\n      - category (str)\n      - total (int)\n    \"\"\"\n    conn = get_db_connection()",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def main():\n    \"\"\"\n    Demonstrates calling each query in sequence and printing the results.\n    Adjust or remove as needed for your assignment submission.\n    \"\"\"\n    print(\"\\n--- Query #1: Most popular movie & top 10 actors ---\")\n    q1_results = query_1_most_popular_movie_with_top_actors()\n    for row in q1_results:\n        print(f\"Movie: {row['movie_title']}, Actor: {\n              row['actor_name']}, Actor Popularity: {row['actor_popularity']}\")",
+        "detail": "src.queries_execution",
+        "documentation": {}
+    },
+    {
+        "label": "main_to_file",
+        "kind": 2,
+        "importPath": "src.queries_execution",
+        "description": "src.queries_execution",
+        "peekOfCode": "def main_to_file():\n    \"\"\"\n    Demonstrates calling each query in sequence and printing the results\n    to 'results.txt'.\n    \"\"\"\n    # Open 'results.txt' in write mode\n    with open(\"results.txt\", \"w\", encoding=\"utf-8\") as f:\n        # Temporarily redirect stdout to the file\n        with redirect_stdout(f):\n            print(\"\\n--- Query #1: Most popular movie & top 10 actors ---\")",
+        "detail": "src.queries_execution",
         "documentation": {}
     }
 ]

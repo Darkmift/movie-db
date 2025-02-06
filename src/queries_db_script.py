@@ -16,8 +16,7 @@ from api_data_retrieve import (
 # Otherwise, define your DB connection inline
 # e.g. from db import get_db_connection, initialize_database, create_tables
 # For this example, we'll define a simple connector inline.
-
-load_dotenv()
+load_dotenv(verbose=True, override=True)
 
 
 def get_db_connection():
@@ -42,7 +41,7 @@ def get_db_connection():
 #
 # QUERY 1: SEED MOVIES
 #
-def query_1_seed_movies():
+def query_1_seed_movies_1():
     """
     Inserts popular movies into the 'movies' table by fetching pages
     from the TMDb API. Demonstrates a 'seeding' query function.
@@ -109,6 +108,121 @@ def query_1_seed_movies():
         cursor.close()
         connection.close()
         print("Finished seeding 'movies'.")
+
+
+def query_1_seed_movies():
+    """
+    Inserts popular movies into the 'movies' table by fetching pages
+    from the TMDb API. Then also populates 'movie_genres' using TMDb's
+    genre_ids for each inserted movie.
+    """
+    connection = get_db_connection()
+    if not connection:
+        print("Failed to connect to DB for seeding movies.")
+        return
+
+    cursor = connection.cursor()
+    try:
+        # Check if the table already has records
+        cursor.execute("SELECT COUNT(*) FROM movies")
+        existing_count = cursor.fetchone()[0]
+        if existing_count > 0:
+            print(f"Movies table already contains {
+                  existing_count} records. Skipping seeding.")
+            return
+
+        print("Seeding 'movies' data from TMDb API...")
+        total_pages = 250  # e.g., fetch 5 pages => ~100 movies
+
+        # 1) Insert query for 'movies'
+        insert_movies_query = """
+            INSERT IGNORE INTO movies
+                (movieId, adult, backdrop_path, original_language, original_title,
+                 overview, popularity, poster_path, release_date, title, video,
+                 vote_average, vote_count)
+            VALUES
+                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
+
+        # 2) Insert query for 'movie_genres'
+        insert_movie_genres_query = """
+            INSERT IGNORE INTO movie_genres (movie_id, genre_id)
+            VALUES (%s, %s)
+        """
+
+        for page in range(1, total_pages + 1):
+            try:
+                data = get_movies_by_page(page)
+                movies = data.get("results", [])
+
+                if not movies:
+                    print(f"No movies found on page {page}.")
+                    continue
+
+                # --- A) Insert the movies in bulk ---
+                batch_values = []
+                for movie in movies:
+                    batch_values.append((
+                        movie.get("id"),                    # movieId (TMDb ID)
+                        movie.get("adult"),
+                        movie.get("backdrop_path"),
+                        movie.get("original_language"),
+                        movie.get("original_title"),
+                        movie.get("overview"),
+                        movie.get("popularity"),
+                        movie.get("poster_path"),
+                        movie.get("release_date"),
+                        movie.get("title"),
+                        movie.get("video"),
+                        movie.get("vote_average"),
+                        movie.get("vote_count")
+                    ))
+                cursor.executemany(insert_movies_query, batch_values)
+                connection.commit()
+
+                # --- B) For each inserted movie, insert genres ---
+                for movie in movies:
+                    tmdb_id = movie.get("id")  # same as movieId
+                    genre_ids = movie.get("genre_ids", [])  # e.g. [35,18]
+
+                    if not genre_ids:
+                        print(f"No genres found for movie {tmdb_id}.")
+                        continue  # skip if no genres
+
+                    # print the genre_ids for each movie
+                    print(f"Genres for movie {tmdb_id}: {genre_ids}")
+                    # Find the local auto-increment ID from 'movies'
+                    cursor.execute(
+                        "SELECT id FROM movies WHERE movieId = %s LIMIT 1",
+                        (tmdb_id,)
+                    )
+                    result = cursor.fetchone()
+                    if not result:
+                        # Should not happen if the INSERT worked, but just in case
+                        continue
+                    local_movie_id = result[0]
+
+                    # Insert each genre into the join table
+                    for g_id in genre_ids:
+                        cursor.execute(insert_movie_genres_query,
+                                       (local_movie_id, g_id))
+
+                connection.commit()
+
+                print(f"Seeded page {page} with {
+                      len(movies)} movies (including genres).")
+                # Simple rate-limit: sleep after each page
+                time.sleep(0.5)
+
+            except Exception as e:
+                print(f"Error on page {page}: {e}")
+
+    except Exception as e:
+        print("Error seeding movies:", e)
+    finally:
+        cursor.close()
+        connection.close()
+        print("Finished seeding 'movies' and 'movie_genres'.")
 
 
 #
@@ -415,11 +529,11 @@ def main():
     """
     print("Starting DB seeding / queries...")
 
-    # 1) Seed the 'movies' table
-    query_1_seed_movies()
-
-    # 2) Seed the 'genres' table
+    # 1) Seed the 'genres' table
     query_2_seed_genres()
+
+    # 2) Seed the 'movies' table
+    query_1_seed_movies()
 
     # 3) Seed cast & crew
     query_3_seed_cast_and_crew()

@@ -11,7 +11,7 @@ import requests
 from dotenv import load_dotenv
 
 # Load environment variables from .env
-load_dotenv()
+load_dotenv(verbose=True, override=True)
 
 # Base URL for the TMDb API
 BASE_URL = 'https://api.themoviedb.org/3'
